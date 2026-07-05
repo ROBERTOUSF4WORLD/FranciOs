@@ -1,243 +1,273 @@
 # FranciOS
 # Arquitetura.md
 
-Versão: 1.0
-
-Autor: Roberto Martins Paz
+Versão: 2.0
 
 Status: Documento Oficial
+
+Projeto: FranciOS
+
+Autor: Roberto Martins Paz
 
 ---
 
 # Índice
 
-1. Visão Geral
-2. Objetivos da Arquitetura
-3. Princípios Arquiteturais
+1. Visão Arquitetural
+2. Objetivos
+3. Princípios
 4. Arquitetura Geral
-5. Componentes do Sistema
-6. Life Engine
-7. Memory Engine
-8. Conselho de Especialistas
-9. Prediction Engine
-10. Life Mentor
-11. Estrutura do Projeto
-12. Arquitetura Flutter
-13. Arquitetura Firebase
-14. Fluxo dos Dados
-15. Fluxo da IA
-16. Segurança
-17. Escalabilidade
-18. Offline First
-19. Roadmap Arquitetural
+5. Componentes Principais
+6. Fluxo de Dados
+7. Arquitetura Mobile
+8. Arquitetura Backend
+9. Arquitetura de IA
+10. Arquitetura de Segurança
+11. Arquitetura de Eventos
+12. Arquitetura Offline
+13. Escalabilidade
+14. Roadmap Arquitetural
 
 ---
 
-# 1. Visão Geral
+# 1. Visão Arquitetural
 
-O FranciOS foi projetado como um Sistema Operacional Pessoal baseado em Inteligência Artificial.
+O FranciOS é uma plataforma inteligente desenvolvida para acompanhar continuamente a evolução do usuário.
 
-Sua arquitetura foi construída para suportar milhões de usuários, mantendo baixo custo operacional, alta escalabilidade e evolução contínua.
+A arquitetura foi projetada para:
 
-O projeto utiliza arquitetura modular baseada em Clean Architecture.
+• Alta escalabilidade
 
----
+• Segurança máxima
 
-# 2. Objetivos da Arquitetura
+• Independência da IA
 
-A arquitetura deve garantir:
+• Privacidade por padrão
 
-• Simplicidade
-
-• Escalabilidade
-
-• Modularização
-
-• Baixo acoplamento
-
-• Alta coesão
-
-• Segurança
+• Processamento híbrido (Local + Nuvem)
 
 • Evolução contínua
 
-• Fácil manutenção
+---
 
-• Independência da IA utilizada
+# 2. Objetivos
+
+A arquitetura deve permitir:
+
+✔ Crescimento sem reescrever o sistema
+
+✔ Novos módulos
+
+✔ Novas IA
+
+✔ Novos sensores
+
+✔ Novas integrações
+
+✔ IA Local
+
+✔ IA em Nuvem
+
+✔ Web3
+
+✔ Offline First
 
 ---
 
 # 3. Princípios Arquiteturais
 
-Toda funcionalidade deve obedecer aos seguintes princípios.
+Toda decisão técnica deverá respeitar estes princípios.
 
-## Separação de Responsabilidades
+## Modularidade
 
 Cada componente possui apenas uma responsabilidade.
 
 ---
 
-## Independência
-
-Nenhum módulo conhece detalhes internos de outro módulo.
-
----
-
 ## Escalabilidade
 
-Novos módulos poderão ser adicionados sem alterar os existentes.
+O sistema deve suportar milhões de usuários.
 
 ---
 
-## Testabilidade
+## Independência
 
-Todo componente deverá ser facilmente testável.
+Nenhum módulo depende diretamente de outro.
+
+Toda comunicação ocorre por interfaces bem definidas.
 
 ---
 
-## IA Independente
+## Segurança
 
-A arquitetura não depende do Gemini.
+Todos os dados pertencem ao usuário.
 
-Qualquer IA poderá ser utilizada.
+---
+
+## Privacidade
+
+Privacy by Design.
+
+Sempre.
+
+---
+
+## Offline First
+
+O aplicativo continua funcionando sem internet.
+
+---
+
+## IA Agnóstica
+
+O FranciOS nunca dependerá de apenas um modelo de IA.
 
 ---
 
 # 4. Arquitetura Geral
 
 ```
-                    FranciOS
-
-                     Mobile
-
-                        │
-
+                        Usuário
+                           │
+                           ▼
+                   FranciOS Mobile
+                           │
+──────────────────────────────────────────────
                  Presentation Layer
-
-                        │
-
+──────────────────────────────────────────────
+                           │
+                           ▼
                  Application Layer
-
-                        │
-
+──────────────────────────────────────────────
+                           │
+                           ▼
                   Business Layer
-
-                        │
-
-                   Life Engine
-
-                        │
-
-                 Memory Engine
-
-                        │
-
-             Conselho de Especialistas
-
-                        │
-
-                Prediction Engine
-
-                        │
-
-                  Life Mentor
-
-                        │
-
-                  Data Layer
-
-                        │
-
-                    Firebase
-
-                        │
-
-                IA Generativa
+──────────────────────────────────────────────
+                           │
+                           ▼
+                    Event Engine
+──────────────────────────────────────────────
+                           │
+                           ▼
+                     Life Engine
+──────────────────────────────────────────────
+                           │
+                           ▼
+                    Memory Engine
+──────────────────────────────────────────────
+                           │
+                           ▼
+              Conselho de Especialistas
+──────────────────────────────────────────────
+                           │
+                           ▼
+                 Prediction Engine
+──────────────────────────────────────────────
+                           │
+                           ▼
+                     Life Mentor
+──────────────────────────────────────────────
+                           │
+                           ▼
+                      Data Layer
+──────────────────────────────────────────────
+                           │
+                           ▼
+                   Banco Local Criptografado
+                           │
+                           ▼
+                   Sincronização Segura
+                           │
+                           ▼
+                      Firebase Cloud
+                           │
+                           ▼
+                  IA (Gemini / ChatGPT / Claude)
 ```
 
 ---
 
-# 5. Componentes
+# 5. Componentes Principais
 
 ## Presentation Layer
 
 Responsável pela interface.
 
-Nunca realiza cálculos.
+Nunca contém regras de negócio.
 
-Nunca acessa IA.
+Funções:
 
-Nunca acessa Firebase diretamente.
-
-Responsabilidades:
-
-• Telas
-
-• Componentes
-
-• Navegação
-
-• Temas
+- Telas
+- Navegação
+- Widgets
+- Temas
+- Componentes
 
 ---
 
 ## Application Layer
 
-Responsável por coordenar os módulos.
-
 Controla:
 
-Fluxos
-
-Eventos
-
-Estados
-
-Permissões
+- Estados
+- Fluxos
+- Permissões
+- Navegação
+- Sessão
 
 ---
 
 ## Business Layer
 
-Onde vivem as regras de negócio.
+Responsável pelas regras do sistema.
 
-Exemplos.
-
-Calcular metas.
+Exemplos:
 
 Calcular evolução.
 
-Calcular Life Score.
+Atualizar metas.
+
+Criar missões.
+
+Gerar notificações.
 
 ---
 
-## Data Layer
+## Event Engine
 
-Responsável por:
+Primeiro componente do núcleo.
 
-Salvar
+Todo acontecimento gera um evento.
 
-Atualizar
+Exemplos.
 
-Excluir
+Dormiu.
 
-Consultar
+Comeu.
 
-Sincronizar
+Estudou.
 
-Nunca realiza cálculos.
+Treinou.
+
+Economizou.
+
+Concluiu objetivo.
+
+Recebeu aumento.
+
+Mudou de emprego.
+
+Todos os motores utilizam estes eventos.
 
 ---
 
-# 6. Life Engine
+## Life Engine
 
-O Life Engine é o motor matemático.
+Motor matemático.
 
-Ele NÃO utiliza IA.
+Não utiliza IA.
 
-Sua responsabilidade é transformar dados em indicadores.
-
-Calcula:
+Calcula.
 
 Energia Física
 
@@ -251,193 +281,185 @@ Energia Social
 
 Energia Espiritual
 
-Índice de Recuperação
+Life Score
 
 Índice de Evolução
 
+Índice de Recuperação
+
 Índice de Consistência
-
-Life Score
-
-Todos os cálculos devem ser reproduzíveis.
 
 ---
 
-# 7. Memory Engine
+## Memory Engine
 
-Responsável pela memória do usuário.
+Responsável pela memória.
 
-Registra:
+Aprende.
 
-Histórico
+Compara.
 
-Hábitos
-
-Mudanças
-
-Aprendizados
-
-Conquistas
-
-Fracassos
-
-Objetivo.
-
-Identificar padrões.
+Reconhece padrões.
 
 Exemplo.
 
-"O usuário produz mais entre 8h e 11h."
+Melhor horário para estudar.
+
+Melhor horário para dormir.
+
+Dias mais produtivos.
+
+Hábitos que aumentam energia.
 
 ---
 
-# 8. Conselho de Especialistas
+## Conselho de Especialistas
 
-O FranciOS utiliza arquitetura Multiagente.
+Arquitetura Multiagente.
 
-Especialistas disponíveis.
+Especialistas.
 
-Health Specialist
+Health
 
-Nutrition Specialist
+Nutrition
 
-Financial Specialist
+Work
 
-Relationship Specialist
+Finance
 
-Work Specialist
+Learning
 
-Learning Specialist
+Relationship
 
-Productivity Specialist
+Productivity
 
-Habit Specialist
+Habits
 
-Emotional Specialist
+Emotional
 
-Philosophy Specialist
+Philosophy
 
-Todos trabalham simultaneamente.
+Todos trabalham paralelamente.
 
 ---
 
-# 9. Prediction Engine
+## Prediction Engine
 
-Responsável por prever tendências.
+Prevê.
 
-Exemplos.
+Burnout.
 
-Burnout
+Fadiga.
 
-Sedentarismo
+Baixa produtividade.
 
-Problemas financeiros
+Sedentarismo.
 
-Quebra de hábitos
+Problemas financeiros.
 
-Baixa produtividade
+Quebra de hábitos.
 
-Isolamento
+Isolamento.
 
-As previsões utilizam:
+---
+
+## Life Mentor
+
+Único agente visível.
+
+Responsável por.
+
+Conversar.
+
+Explicar.
+
+Planejar.
+
+Motivar.
+
+Priorizar.
+
+Resolver conflitos entre especialistas.
+
+---
+
+# 6. Fluxo dos Dados
+
+```
+Usuário
+
+↓
+
+Evento
+
+↓
+
+Event Engine
+
+↓
 
 Life Engine
 
+↓
+
 Memory Engine
 
-Histórico
+↓
 
-Contexto
+Especialistas
 
-Nunca são determinísticas.
+↓
+
+Prediction Engine
+
+↓
+
+Life Mentor
+
+↓
+
+Dashboard
+
+↓
+
+Aprendizado
+
+↓
+
+Novo Evento
+```
+
+Este ciclo nunca termina.
 
 ---
 
-# 10. Life Mentor
+# 7. Arquitetura Mobile
 
-É o único agente que conversa com o usuário.
+Flutter
 
-Responsabilidades.
+↓
 
-Explicar
+Material Design 3
 
-Planejar
+↓
 
-Organizar
+Riverpod
 
-Priorizar
+↓
 
-Motivar
+Local Database
 
-Responder perguntas
+↓
 
-Resolver conflitos entre especialistas
+Criptografia
 
----
+↓
 
-# 11. Estrutura do Projeto
-
-```
-FranciOS
-
-docs/
-
-app/
-
-backend/
-
-firebase/
-
-assets/
-
-prompts/
-
-scripts/
-
-README.md
-
-LICENSE
-
-.gitignore
-```
+Sincronização
 
 ---
 
-# 12. Arquitetura Flutter
-
-```
-lib/
-
-core/
-
-shared/
-
-features/
-
-services/
-
-repositories/
-
-models/
-
-providers/
-
-widgets/
-
-screens/
-
-theme/
-
-utils/
-
-main.dart
-```
-
-Cada módulo possui sua própria estrutura.
-
----
-
-# 13. Arquitetura Firebase
+# 8. Arquitetura Backend
 
 Firebase Authentication
 
@@ -467,74 +489,15 @@ Crashlytics
 
 ---
 
-# 14. Fluxo dos Dados
+# 9. Arquitetura da IA
 
-```
-Usuário
+A IA recebe apenas contexto.
 
-↓
+Nunca o banco completo.
 
-Interface
-
-↓
-
-Validação
-
-↓
-
-Business Layer
-
-↓
+Fluxo.
 
 Life Engine
-
-↓
-
-Memory Engine
-
-↓
-
-Firebase
-
-↓
-
-Especialistas
-
-↓
-
-Prediction Engine
-
-↓
-
-Life Mentor
-
-↓
-
-Resposta
-
-↓
-
-Dashboard
-```
-
----
-
-# 15. Fluxo da Inteligência
-
-```
-Dados
-
-↓
-
-Normalização
-
-↓
-
-Life Engine
-
-↓
-
-Memory Engine
 
 ↓
 
@@ -551,152 +514,214 @@ Life Mentor
 ↓
 
 Usuário
+
+Compatível com.
+
+Gemini
+
+ChatGPT
+
+Claude
+
+DeepSeek
+
+Llama
+
+Modelos Locais
+
+---
+
+# 10. Arquitetura de Segurança
+
+Banco Local
+
+↓
+
+AES-256
+
+↓
+
+TLS 1.3
+
+↓
+
+Servidor
+
+↓
+
+Cloud Functions
+
+↓
+
+IA
+
+Todos os dados permanecem criptografados.
+
+---
+
+# 11. Arquitetura de Eventos
+
+Toda alteração gera um evento.
+
+Exemplo.
+
+```
+Dormiu 7h30
+
+↓
+
+Evento
+
+↓
+
+Life Engine
+
+↓
+
+Memory Engine
+
+↓
+
+Prediction Engine
+
+↓
+
+Life Mentor
+
+↓
+
+Nova recomendação
 ```
 
 ---
 
-# 16. Segurança
+# 12. Arquitetura Offline
 
-Todos os dados pertencem ao usuário.
+Sem internet.
 
-Princípios.
+↓
 
-Autenticação obrigatória.
+Banco Local
 
-Criptografia.
+↓
 
-Regras do Firestore.
+Eventos continuam funcionando.
 
-Cloud Functions.
+↓
 
-Chaves protegidas.
-
-Logs.
-
-Backup.
-
-Controle por UID.
+Sincronização automática quando retornar conexão.
 
 ---
 
-# 17. Escalabilidade
+# 13. Escalabilidade
 
-A arquitetura suporta.
+Projetado para.
 
 Milhões de usuários.
 
 Novos módulos.
 
-Novas IA.
-
-Novos dispositivos.
-
 Novos sensores.
 
-Integração com wearables.
+Novas IA.
+
+Novas integrações.
+
+Wearables.
 
 Open Finance.
 
-Google Fit.
+Web3.
 
-Apple Health.
-
-Samsung Health.
+IoT.
 
 ---
 
-# 18. Offline First
+# 14. Roadmap Arquitetural
 
-O FranciOS deve continuar funcionando mesmo sem internet.
+Arquitetura 0.1
 
-Estratégia.
-
-Cache local.
-
-Fila de sincronização.
-
-Conflitos resolvidos automaticamente.
-
-Sincronização transparente.
+- Flutter
+- Firebase
+- Dashboard
 
 ---
 
-# 19. Roadmap Arquitetural
+Arquitetura 0.5
 
-## Arquitetura 0.1
-
-Cadastro
-
-Dashboard
-
-Firebase
-
-IA
+- Event Engine
+- Life Engine
 
 ---
 
-## Arquitetura 0.5
+Arquitetura 1.0
 
-Life Engine
-
-Memory Engine
-
-Planejamento
-
-Relatórios
+- Memory Engine
+- Prediction Engine
+- Conselho de Especialistas
 
 ---
 
-## Arquitetura 1.0
+Arquitetura 2.0
 
-Conselho de Especialistas
-
-Prediction Engine
-
-Dashboard Inteligente
-
----
-
-## Arquitetura 2.0
-
-Smartwatch
-
-Google Fit
-
-Apple Health
-
-Open Finance
-
-Wearables
-
-IoT
+- IA Local
+- Modo Soberano
+- Smartwatch
+- Open Finance
 
 ---
 
-## Arquitetura 3.0
+Arquitetura 3.0
 
-Agentes Autônomos
+- Agentes Autônomos
+- Gêmeo Digital
+- Web3 Opcional
+- IA Distribuída
 
-Gêmeo Digital
+---
 
-Planejamento Preditivo
+# Manifesto Arquitetural
 
-Aprendizado Adaptativo
+Toda funcionalidade adicionada ao FranciOS deverá responder:
+
+1. Respeita a privacidade?
+
+2. Melhora a vida do usuário?
+
+3. Pode funcionar offline?
+
+4. É modular?
+
+5. É escalável?
+
+6. Explica suas decisões?
+
+Se qualquer resposta for "não", a funcionalidade deve ser revista antes de entrar no projeto.
 
 ---
 
 # Princípio Supremo
 
-A arquitetura do FranciOS existe para permitir que qualquer funcionalidade futura seja adicionada sem comprometer estabilidade, desempenho, segurança ou experiência do usuário.
+A arquitetura do FranciOS existe para garantir que a tecnologia permaneça uma ferramenta a serviço das pessoas.
 
-Toda decisão técnica deve respeitar este princípio.
+O sistema deve evoluir continuamente sem comprometer:
+
+• Privacidade
+
+• Segurança
+
+• Transparência
+
+• Escalabilidade
+
+• Experiência do usuário
+
+• Liberdade digital
 
 ---
 
-Documento Oficial de Arquitetura
+Documento Oficial da Arquitetura
 
 Projeto FranciOS
 
-Versão 1.0
-
-Todos os direitos reservados.
+Versão 2.0
