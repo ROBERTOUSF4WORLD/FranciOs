@@ -11,780 +11,213 @@ Autor: Roberto Martins Paz
 
 ---
 
-# Índice
+# Banco de Dados do FranciOS
 
-1. Objetivo
-2. Filosofia do Banco
-3. Tecnologias
-4. Estrutura Geral
-5. Coleções
-6. Estrutura do Usuário
-7. Módulos
-8. Life Engine
-9. Memory Engine
-10. Dashboard
-11. IA
-12. Segurança
-13. Versionamento
-14. Escalabilidade
+## Visão Geral
 
----
+O banco de dados do FranciOS não foi projetado apenas para armazenar informações.
 
-# 1. Objetivo
+Ele foi desenvolvido para registrar eventos, construir memória, gerar conhecimento e produzir inteligência.
 
-Este documento define oficialmente toda a estrutura de armazenamento de dados do FranciOS.
+O banco trabalha em conjunto com:
 
-Todo desenvolvimento deverá seguir esta especificação.
+- Event Engine
+- Life Engine
+- Memory Engine
+- Prediction Engine
+- Conselho de Especialistas
+- Life Mentor
+
+O objetivo é transformar dados em conhecimento útil para apoiar melhores decisões.
 
 ---
 
-# 2. Filosofia
+# Filosofia
 
-O banco foi projetado para armazenar a evolução completa da vida do usuário.
+Todo dado registrado deverá contribuir para responder uma única pergunta:
 
-Não armazenamos apenas informações.
+> Como podemos ajudar o usuário a evoluir de forma equilibrada?
 
-Armazenamos contexto.
+O banco nunca armazenará informações sem finalidade.
 
-Histórico.
-
-Mudanças.
-
-Padrões.
-
-Aprendizados.
+Todo registro deve gerar valor para o usuário.
 
 ---
 
-# 3. Tecnologia
+# Princípios
 
-Frontend
-
-Flutter
-
-Backend
-
-Firebase
-
-Banco
-
-Cloud Firestore
-
-Arquivos
-
-Firebase Storage
-
-Autenticação
-
-Firebase Authentication
-
-Processamento
-
-Cloud Functions
-
-IA
-
-Gemini
+- Event Driven
+- Privacy by Design
+- Offline First
+- Knowledge First
+- IA Agnóstica
+- Escalabilidade Horizontal
+- Criptografia por padrão
+- Histórico permanente
+- Dados pertencem ao usuário
 
 ---
 
-# 4. Estrutura Geral
+# Arquitetura
 
 ```
+Usuário
 
+↓
+
+Evento
+
+↓
+
+Event Engine
+
+↓
+
+Banco de Dados
+
+↓
+
+Memory Engine
+
+↓
+
+Knowledge Engine
+
+↓
+
+Life Engine
+
+↓
+
+Prediction Engine
+
+↓
+
+Life Mentor
+
+↓
+
+Dashboard
+```
+
+---
+
+# Estrutura Geral
+
+```
 users
-│
+
 ├── profile
-├── work
-├── food
-├── sleep
-├── health
-├── exercises
-├── finance
-├── studies
-├── relationships
-├── spirituality
-├── goals
-├── habits
-├── mood
-├── stress
-├── learning
-├── dashboard
-├── ai
+├── events
+├── states
 ├── memory
+├── knowledge
+├── insights
+├── dashboard
+├── missions
+├── gamification
 ├── predictions
+├── notifications
+├── privacy
+├── vault
+├── devices
 ├── settings
-└── notifications
-
+└── audit
 ```
-
-Cada usuário possui uma estrutura totalmente isolada.
 
 ---
 
-# 5. Coleção Principal
+# Coleção: profile
 
-```
+Armazena informações permanentes.
 
-users
+Campos
 
-```
+- Nome
+- Foto
+- Data de nascimento
+- Sexo
+- Altura
+- Peso inicial
+- Cidade
+- País
+- Idioma
+- Fuso horário
+- Profissão
+- Estado civil
+- Objetivos principais
+- Data de cadastro
 
-Documento
+---
 
-```
+# Coleção: events
 
-uid
+O coração do banco.
 
-```
+Todo acontecimento gera um evento.
+
+Tipos de eventos
+
+- Sono
+- Alimentação
+- Exercício
+- Trabalho
+- Estudos
+- Finanças
+- Humor
+- Estresse
+- Relacionamentos
+- Espiritualidade
+- Saúde
+- Hábitos
+- Metas
+- Gamificação
+- IA
+- Sistema
+
+Estrutura
+
+- id
+- tipo
+- categoria
+- data
+- horário
+- origem
+- payload
+- localização (opcional)
+- dispositivo
+- versão
 
 Exemplo
 
 ```
+Tipo:
+Sleep
 
-users
+Data:
+2026-07-05
 
-KJH38DJF832HJK
+Duração:
+7h40
 
+Qualidade:
+87%
+
+Origem:
+Manual
 ```
 
 ---
 
-# 6. Estrutura do Perfil
+# Coleção: states
 
-```
-
-profile
-
-```
-
-Campos
-
-Nome
-
-Foto
-
-Sexo
-
-Nascimento
-
-Altura
-
-Peso
-
-Cidade
-
-Estado
-
-País
-
-Profissão
-
-Objetivos
-
-Estado Civil
-
-Idioma
-
-Fuso Horário
-
-Data de Cadastro
-
----
-
-# 7. Trabalho
-
-```
-
-work
-
-```
-
-Campos
-
-Data
-
-Profissão
-
-Horas Trabalhadas
-
-Horas Extras
-
-Esforço Físico
-
-Esforço Mental
-
-Carga Emocional
-
-Produtividade
-
-Nível de Estresse
-
-Risco Ocupacional
-
-Acidentes
-
-Observações
-
----
-
-# 8. Alimentação
-
-```
-
-food
-
-```
-
-Campos
-
-Data
-
-Café da Manhã
-
-Almoço
-
-Jantar
-
-Lanches
-
-Água
-
-Proteínas
-
-Carboidratos
-
-Gorduras
-
-Calorias
-
-Vitaminas
-
-Minerais
-
-Cafeína
-
-Álcool
-
-Observações
-
----
-
-# 9. Sono
-
-```
-
-sleep
-
-```
-
-Campos
-
-Data
-
-Dormiu
-
-Acordou
-
-Horas Dormidas
-
-Qualidade
-
-Interrupções
-
-Sonhos
-
-Recuperação
-
-Observações
-
----
-
-# 10. Saúde
-
-```
-
-health
-
-```
-
-Campos
-
-Peso
-
-Pressão
-
-Batimentos
-
-Temperatura
-
-Oxigenação
-
-Dor
-
-Doença
-
-Medicamentos
-
-Suplementos
-
-Exames
-
-Observações
-
----
-
-# 11. Exercícios
-
-```
-
-exercises
-
-```
-
-Campos
-
-Tipo
-
-Tempo
-
-Intensidade
-
-Calorias
-
-Distância
-
-Batimentos
-
-Observações
-
----
-
-# 12. Finanças
-
-```
-
-finance
-
-```
-
-Campos
-
-Receitas
-
-Despesas
-
-Investimentos
-
-Patrimônio
-
-Dívidas
-
-Metas
-
-Fluxo de Caixa
-
-Reserva Financeira
-
-Categoria
-
-Descrição
-
----
-
-# 13. Estudos
-
-```
-
-studies
-
-```
-
-Campos
-
-Curso
-
-Tema
-
-Tempo
-
-Progresso
-
-Notas
-
-Nível
-
-Observações
-
----
-
-# 14. Relacionamentos
-
-```
-
-relationships
-
-```
-
-Campos
-
-Pessoa
-
-Categoria
-
-Tempo de Qualidade
-
-Humor
-
-Conflitos
-
-Momentos Positivos
-
-Observações
-
----
-
-# 15. Espiritualidade
-
-```
-
-spirituality
-
-```
-
-Campos
-
-Oração
-
-Meditação
-
-Leitura
-
-Gratidão
-
-Reflexão
-
-Observações
-
----
-
-# 16. Objetivos
-
-```
-
-goals
-
-```
-
-Campos
-
-Título
-
-Categoria
-
-Prioridade
-
-Prazo
-
-Status
-
-Progresso
-
-Observações
-
----
-
-# 17. Hábitos
-
-```
-
-habits
-
-```
-
-Campos
-
-Nome
-
-Categoria
-
-Meta
-
-Sequência
-
-Falhas
-
-Última Execução
-
-Observações
-
----
-
-# 18. Humor
-
-```
-
-mood
-
-```
-
-Campos
-
-Felicidade
-
-Ansiedade
-
-Raiva
-
-Calma
-
-Motivação
-
-Tristeza
-
-Energia
-
-Observações
-
----
-
-# 19. Estresse
-
-```
-
-stress
-
-```
-
-Campos
-
-Nível
-
-Origem
-
-Duração
-
-Sintomas
-
-Como resolveu
-
-Observações
-
----
-
-# 20. Aprendizado
-
-```
-
-learning
-
-```
-
-Campos
-
-Conquista
-
-Erro
-
-Lição
-
-Reflexão
-
-Melhoria
-
-Observações
-
----
-
-# 21. Dashboard
-
-```
-
-dashboard
-
-```
-
-Campos
-
-Life Score
-
-Energia Física
-
-Energia Mental
-
-Energia Emocional
-
-Energia Financeira
-
-Energia Social
-
-Energia Espiritual
-
-Índice de Recuperação
-
-Índice de Equilíbrio
-
-Produtividade
-
-Última Atualização
-
----
-
-# 22. IA
-
-```
-
-ai
-
-```
-
-Campos
-
-Resumo Diário
-
-Resumo Semanal
-
-Resumo Mensal
-
-Planejamento
-
-Bom Dia
-
-Boa Noite
-
-Conselhos
-
-Filosofia
-
-Alertas
-
-Recomendações
-
----
-
-# 23. Memory Engine
-
-```
-
-memory
-
-```
-
-Responsável por registrar:
-
-Mudanças de hábitos
-
-Mudanças de rotina
-
-Mudanças financeiras
-
-Mudanças emocionais
-
-Mudanças físicas
-
-Mudanças profissionais
-
-Aprendizados
-
-Eventos importantes
-
-Padrões identificados
-
----
-
-# 24. Prediction Engine
-
-```
-
-predictions
-
-```
-
-Campos
-
-Tipo
-
-Probabilidade
-
-Impacto
-
-Data
-
-Status
-
-Descrição
-
-Sugestão
+Representa o estado atual do usuário.
 
 Exemplos
 
-Burnout
+Peso Atual
 
-Fadiga
-
-Atraso Financeiro
-
-Baixa Produtividade
-
-Sedentarismo
-
----
-
-# 25. Configurações
-
-```
-
-settings
-
-```
-
-Tema
-
-Idioma
-
-Notificações
-
-Privacidade
-
-Permissões
-
-APIs
-
-Backup
-
-Sincronização
-
----
-
-# 26. Notificações
-
-```
-
-notifications
-
-```
-
-Campos
-
-Título
-
-Mensagem
-
-Tipo
-
-Lida
-
-Data
-
-Origem
-
-Prioridade
-
----
-
-# 27. Life Engine
-
-O Life Engine utiliza dados de todas as coleções para calcular:
+Life Score
 
 Energia Física
 
@@ -792,108 +225,347 @@ Energia Mental
 
 Energia Emocional
 
-Energia Financeira
+Saldo FP
 
-Energia Social
+Nível
 
-Energia Espiritual
+Objetivos Ativos
 
-Índice de Evolução
-
-Índice de Recuperação
-
-Índice de Consistência
-
-Life Score
-
-Nenhum cálculo é armazenado permanentemente sem histórico.
+Esses dados são recalculados constantemente.
 
 ---
 
-# 28. Histórico
+# Coleção: memory
 
-Toda alteração gera um evento.
+Responsável pela memória histórica.
 
-Exemplo.
+Armazena padrões como
 
-Usuário aumentou ingestão de água.
-
-↓
-
-Novo evento.
-
-↓
-
-Memory Engine registra.
-
-↓
-
-Prediction Engine atualiza previsões.
-
-↓
-
-Life Mentor adapta planejamento.
+- melhor horário para estudar
+- melhor horário para dormir
+- alimentos que aumentam energia
+- horários de maior produtividade
+- frequência ideal de descanso
+- hábitos mais consistentes
 
 ---
 
-# 29. Segurança
+# Coleção: knowledge
 
-Todos os documentos pertencem ao UID do usuário.
+Conhecimento produzido automaticamente pela IA.
 
-Regras obrigatórias.
+Exemplos
 
-Autenticação.
+"O usuário aprende melhor entre 8h e 10h."
 
-Criptografia.
+"A caminhada melhora sua produtividade em média 15%."
 
-Cloud Functions.
+"A privação de sono reduz seu foco em aproximadamente 20%."
 
-Logs.
+Cada conhecimento possui:
 
-Backup.
-
-Controle de acesso.
+- confiança
+- data de criação
+- motor responsável
+- evidências utilizadas
 
 ---
 
-# 30. Escalabilidade
+# Coleção: insights
 
-O banco suporta:
+Registra descobertas importantes.
 
-Milhões de usuários.
+Exemplos
 
-Novos módulos.
+- Evolução da saúde
+- Evolução financeira
+- Evolução emocional
+- Evolução dos estudos
+- Mudanças de hábitos
 
-Novos sensores.
+Os insights alimentam o Dashboard e o Life Mentor.
 
-Wearables.
+---
 
-Open Finance.
+# Coleção: dashboard
 
-Google Fit.
+Resumo atualizado continuamente.
 
-Apple Health.
+Campos
 
-Samsung Health.
+- Life Score
+- Energia Física
+- Energia Mental
+- Energia Emocional
+- Energia Financeira
+- Energia Social
+- Energia Espiritual
+- Índice de Recuperação
+- Índice de Consistência
+- Índice de Evolução
+- Última atualização
 
-Novas IA.
+---
 
-Sem necessidade de alteração estrutural.
+# Coleção: missions
+
+Missões geradas pela IA.
+
+Tipos
+
+- Diárias
+- Semanais
+- Mensais
+- Especiais
+
+Campos
+
+- título
+- objetivo
+- progresso
+- recompensa
+- prazo
+- status
+
+---
+
+# Coleção: gamification
+
+Responsável por
+
+- Franci Points
+- Life XP
+- Medalhas
+- Conquistas
+- Sequências
+- Ranking Pessoal
+- Ranking Global
+- Clube FranciOS
+
+---
+
+# Coleção: predictions
+
+Armazena previsões produzidas pelo Prediction Engine.
+
+Exemplos
+
+- risco de burnout
+- risco financeiro
+- quebra de hábitos
+- baixa produtividade
+- sedentarismo
+
+Campos
+
+- probabilidade
+- impacto
+- confiança
+- data
+- justificativa
+
+---
+
+# Coleção: notifications
+
+Notificações inteligentes.
+
+Tipos
+
+- Bom dia
+- Boa noite
+- Alertas
+- Missões
+- Conquistas
+- Recomendações
+- Relatórios
+
+---
+
+# Coleção: privacy
+
+Define as permissões do usuário.
+
+Exemplos
+
+- sincronização
+- IA
+- compartilhamento
+- backup
+- localização
+- sensores
+- integrações
+
+---
+
+# Coleção: vault
+
+FranciVault
+
+Armazena
+
+- documentos
+- certificados
+- exames
+- contratos
+- senhas
+- chaves
+- arquivos pessoais
+
+Tudo protegido por criptografia.
+
+---
+
+# Coleção: devices
+
+Lista todos os dispositivos autorizados.
+
+Campos
+
+- id
+- nome
+- plataforma
+- último acesso
+- status
+
+---
+
+# Coleção: settings
+
+Preferências do usuário.
+
+- tema
+- idioma
+- notificações
+- acessibilidade
+- backup
+- sincronização
+- modo soberano
+
+---
+
+# Coleção: audit
+
+Registro completo do sistema.
+
+Toda operação gera auditoria.
+
+Campos
+
+- data
+- usuário
+- dispositivo
+- ação
+- módulo
+- resultado
+
+---
+
+# Relacionamento entre os Motores
+
+Event Engine
+
+↓
+
+Memory Engine
+
+↓
+
+Knowledge Engine
+
+↓
+
+Life Engine
+
+↓
+
+Prediction Engine
+
+↓
+
+Conselho de Especialistas
+
+↓
+
+Life Mentor
+
+↓
+
+Dashboard
+
+---
+
+# Segurança
+
+Todos os dados seguem os princípios:
+
+- AES-256
+- TLS 1.3
+- Criptografia ponta a ponta
+- UID por usuário
+- Backup criptografado
+- Auditoria completa
+- Controle granular de permissões
+
+Nenhum dado é compartilhado sem autorização.
+
+---
+
+# Sincronização
+
+O banco utiliza sincronização híbrida.
+
+- Banco Local
+- Banco em Nuvem
+- Sincronização Incremental
+- Resolução automática de conflitos
+- Offline First
+
+---
+
+# Escalabilidade
+
+Projetado para:
+
+- Milhões de usuários
+- IA Local
+- IA em Nuvem
+- Wearables
+- Open Finance
+- Google Fit
+- Apple Health
+- Samsung Health
+- Web3 (opcional)
+
+---
+
+# Conformidade
+
+O FranciOS foi projetado para atender:
+
+- LGPD
+- GDPR
+- Privacy by Design
+- Security by Design
 
 ---
 
 # Princípio Supremo
 
-O banco de dados do FranciOS não foi projetado apenas para armazenar informações.
+O Banco de Dados do FranciOS não existe apenas para armazenar informações.
 
-Ele foi projetado para registrar a evolução da vida humana.
+Ele existe para registrar a história da evolução do usuário, transformando eventos em memória, memória em conhecimento, conhecimento em previsões e previsões em decisões inteligentes.
 
-Todo dado armazenado deve contribuir para gerar conhecimento, contexto e decisões mais inteligentes.
+Todo dado deve gerar valor.
+
+Todo conhecimento deve beneficiar o usuário.
+
+Os dados pertencem sempre ao usuário.
 
 ---
 
-Documento Oficial do Banco de Dados
+Documento Oficial
 
-Projeto FranciOS
+Banco de Dados do FranciOS
 
 Versão 1.0
