@@ -2,98 +2,106 @@
 
 # 🧠 FranciOS
 
-## O Sistema Operacional da Vida
+# O Sistema Operacional da Vida
 
 ### Inteligência Artificial • Privacidade • Evolução Humana
 
-*"Sua vida. Seus dados. Seu controle."*
+---
+
+**Sua vida. Seus dados. Seu controle.**
+
+*"A melhor tecnologia é aquela que ajuda você a viver melhor e depois sai do caminho."*
 
 ---
 
-![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B?style=for-the-badge&logo=flutter&logoColor=white)
+![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-blue)
 
-![Firebase](https://img.shields.io/badge/Firebase-Google-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Flutter](https://img.shields.io/badge/Flutter-3.x-02569B)
 
-![Gemini](https://img.shields.io/badge/Gemini-AI-8E44AD?style=for-the-badge)
+![Firebase](https://img.shields.io/badge/Firebase-Cloud-FFCA28)
 
-![Privacy First](https://img.shields.io/badge/Privacy-First-2ECC71?style=for-the-badge)
+![Gemini](https://img.shields.io/badge/Gemini-AI-8E44AD)
 
-![Web3 Ready](https://img.shields.io/badge/Web3-Ready-1E90FF?style=for-the-badge)
+![Privacy First](https://img.shields.io/badge/Privacy-First-2ECC71)
+
+![Web3 Ready](https://img.shields.io/badge/Web3-Ready-1E90FF)
 
 </div>
 
 ---
 
-# 🌍 O que é o FranciOS?
+# 🌎 O que é o FranciOS?
 
-O FranciOS é uma plataforma de Inteligência Artificial criada para acompanhar, compreender e otimizar a vida do usuário.
+O FranciOS é uma plataforma de Inteligência Artificial criada para acompanhar, compreender e otimizar a vida das pessoas.
 
-Mais do que um aplicativo de produtividade, o FranciOS funciona como um **Sistema Operacional Pessoal**, capaz de integrar saúde, trabalho, alimentação, sono, estudos, finanças, relacionamentos, objetivos e hábitos em um único ecossistema inteligente.
+Ele funciona como um **Sistema Operacional Pessoal**, integrando saúde, produtividade, trabalho, alimentação, sono, estudos, finanças, hábitos, objetivos e relacionamentos em um único ecossistema inteligente.
 
-Seu propósito é transformar dados em decisões mais conscientes, preservando o equilíbrio entre produtividade, saúde e qualidade de vida.
+O objetivo não é controlar o usuário.
+
+O objetivo é ajudá-lo a tomar melhores decisões.
 
 ---
 
 # 🎯 Missão
 
-Ajudar pessoas a viverem melhor utilizando Inteligência Artificial para transformar informações em decisões inteligentes.
+Ajudar pessoas a viverem de forma mais consciente através da Inteligência Artificial.
 
 ---
 
-# 🌟 Visão
+# 🌍 Visão
 
-Criar o sistema operacional pessoal mais inteligente, seguro e confiável do mundo, colocando o usuário no controle absoluto de seus dados e utilizando IA para apoiar sua evolução contínua.
+Ser o sistema operacional pessoal mais inteligente, seguro e confiável do mundo.
 
 ---
 
 # ❤️ Valores
 
-- Privacidade em primeiro lugar
-- Transparência
-- Segurança
-- Equilíbrio
-- Evolução contínua
-- Tecnologia centrada nas pessoas
+- Privacidade acima de tudo
 - Ética
+- Transparência
+- Evolução contínua
+- Inteligência centrada no ser humano
+- Segurança
 - Liberdade digital
+- Equilíbrio
 
 ---
 
 # 🚀 O Problema
 
-Hoje utilizamos dezenas de aplicativos diferentes.
+Hoje usamos dezenas de aplicativos.
 
-- Agenda
-- Calendário
-- Alimentação
-- Exercícios
-- Finanças
-- Estudos
-- Hábitos
-- Notas
-- Saúde
+Um para academia.
 
-Nenhum deles compreende a pessoa como um todo.
+Outro para agenda.
 
-O FranciOS foi criado para integrar todas essas áreas.
+Outro para alimentação.
+
+Outro para finanças.
+
+Outro para estudos.
+
+Outro para sono.
+
+Nenhum deles conversa entre si.
+
+Nenhum entende a pessoa como um todo.
 
 ---
 
 # 💡 A Solução
 
-O FranciOS cria um modelo inteligente da vida do usuário.
+O FranciOS integra todas as áreas da vida em uma única plataforma inteligente.
 
-Ele entende:
+Ele aprende continuamente.
 
-- Quem você é.
-- Como você trabalha.
-- Como você dorme.
-- Como você aprende.
-- Como você se alimenta.
-- Como você administra seu dinheiro.
-- Como evolui ao longo do tempo.
+Entende contexto.
 
-E utiliza essas informações para gerar recomendações personalizadas.
+Cria planejamento.
+
+Prevê problemas.
+
+Ajuda o usuário a evoluir continuamente.
 
 ---
 
@@ -101,10 +109,6 @@ E utiliza essas informações para gerar recomendações personalizadas.
 
 ```
 Usuário
-
-↓
-
-Eventos
 
 ↓
 
@@ -136,33 +140,42 @@ Dashboard Inteligente
 
 ↓
 
-Evolução Contínua
+Aprendizado Contínuo
 ```
 
 ---
 
-# 🧩 Principais Componentes
+# ⚙ Motores Inteligentes
 
 ## 📊 Event Engine
 
-Registra todos os acontecimentos importantes da vida do usuário.
+Registra acontecimentos importantes da vida do usuário.
 
 ---
 
-## ⚙️ Life Engine
+## ⚙ Life Engine
 
-Motor matemático responsável por calcular:
+Motor matemático responsável por calcular.
+
+- Life Score
 
 - Energia Física
+
 - Energia Mental
+
 - Energia Emocional
+
 - Energia Financeira
+
 - Energia Social
+
 - Energia Espiritual
-- Índice de Recuperação
-- Índice de Consistência
+
 - Índice de Evolução
-- Life Score
+
+- Índice de Recuperação
+
+- Índice de Consistência
 
 ---
 
@@ -170,146 +183,247 @@ Motor matemático responsável por calcular:
 
 Aprende continuamente.
 
-Identifica padrões.
+Descobre padrões.
 
-Constrói a memória da evolução do usuário.
+Conhece hábitos.
+
+Constrói memória histórica.
 
 ---
 
 ## 🔮 Prediction Engine
 
-Prevê tendências como:
+Prevê.
 
-- Burnout
-- Sedentarismo
-- Falta de sono
-- Estresse
-- Atraso financeiro
-- Quebra de hábitos
-- Queda de produtividade
+Burnout
+
+Sedentarismo
+
+Baixa produtividade
+
+Problemas financeiros
+
+Má alimentação
+
+Isolamento
+
+Quebra de hábitos
 
 ---
 
-## 👨‍⚕️ Conselho de Especialistas
+## 👨‍⚕ Conselho de Especialistas
 
-Especialistas virtuais independentes.
+Especialistas independentes.
 
-- Saúde
-- Alimentação
-- Trabalho
-- Finanças
-- Estudos
-- Relacionamentos
-- Hábitos
-- Bem-estar
-- Produtividade
-- Filosofia
+Health Specialist
+
+Nutrition Specialist
+
+Financial Specialist
+
+Work Specialist
+
+Learning Specialist
+
+Relationship Specialist
+
+Habit Specialist
+
+Productivity Specialist
+
+Emotional Specialist
+
+Philosophy Specialist
 
 ---
 
 ## 👨‍🏫 Life Mentor
 
-É o único agente que conversa diretamente com o usuário.
+Único agente que conversa diretamente com o usuário.
 
-Recebe informações de todos os especialistas e apresenta recomendações claras e equilibradas.
+Recebe informações dos especialistas.
+
+Organiza.
+
+Planeja.
+
+Explica.
+
+Motiva.
 
 ---
 
 # 📱 Módulos
 
-- Perfil
-- Trabalho
-- Alimentação
-- Sono
-- Saúde
-- Exercícios
-- Estudos
-- Finanças
-- Relacionamentos
-- Espiritualidade
-- Objetivos
-- Hábitos
-- Humor
-- Estresse
-- Aprendizado
+✔ Perfil
+
+✔ Trabalho
+
+✔ Alimentação
+
+✔ Sono
+
+✔ Saúde
+
+✔ Exercícios
+
+✔ Estudos
+
+✔ Finanças
+
+✔ Relacionamentos
+
+✔ Objetivos
+
+✔ Hábitos
+
+✔ Humor
+
+✔ Estresse
+
+✔ Aprendizado
+
+✔ Espiritualidade
 
 ---
 
-# 🤖 Inteligência Artificial
+# 🏆 Gamificação
 
-Compatível com:
+Sistema baseado em evolução pessoal.
 
-- Gemini
-- ChatGPT
-- Claude
-- Llama
-- DeepSeek
-- Mistral
-- Modelos Locais
+## Franci Points (FP)
 
-A arquitetura foi projetada para permitir a troca do modelo de IA sem alterar o restante do sistema.
+Moeda interna.
+
+## Life XP
+
+Experiência do usuário.
+
+## Níveis
+
+Explorador
+
+Aprendiz
+
+Disciplinado
+
+Construtor
+
+Estrategista
+
+Guardião
+
+Mentor
+
+Mestre
+
+Visionário
+
+Lenda
+
+## Missões Inteligentes
+
+Criadas automaticamente pelo Life Mentor.
+
+## Ranking Pessoal
+
+Você compete apenas com sua melhor versão.
+
+## Ranking Global
+
+Opcional.
+
+Nunca expõe informações privadas.
 
 ---
 
 # 🔐 Privacidade
 
-O FranciOS foi desenvolvido seguindo o princípio **Privacy by Design**.
+Privacy First.
 
-## O usuário controla seus dados.
+Os dados pertencem ao usuário.
 
-Os dados são classificados em quatro níveis.
+Nunca serão vendidos.
 
-- Dados Locais
-- Dados Criptografados
-- Dados Compartilháveis
-- Dados Públicos
+Nunca utilizados para publicidade.
+
+O usuário controla completamente suas informações.
 
 ---
 
-## Criptografia
+## Arquitetura de Privacidade
 
-- AES-256
-- TLS 1.3
-- SHA-256
-- Backup criptografado
+Banco Local Criptografado
+
+↓
+
+Backup Criptografado
+
+↓
+
+Sincronização Segura
+
+↓
+
+Servidor
+
+↓
+
+Dados Criptografados
+
+↓
+
+IA recebe apenas contexto mínimo
 
 ---
 
 ## Web3 Ready
 
-Preparado para:
+Compatível com.
 
-- DID
-- Verifiable Credentials
-- Passkeys
-- Wallets
-- Identidade descentralizada
-- Armazenamento descentralizado opcional
+DID
+
+Wallets
+
+Verifiable Credentials
+
+Passkeys
+
+Criptografia Distribuída
+
+Armazenamento Descentralizado
 
 ---
 
-# 🏗 Tecnologias
+# 🛠 Tecnologias
 
 Frontend
 
-- Flutter
+Flutter
 
 Backend
 
-- Firebase
-- Cloud Firestore
-- Cloud Functions
+Firebase
+
+Cloud Firestore
+
+Cloud Functions
+
+Firebase Authentication
 
 IA
 
-- Gemini
-- Arquitetura Multiagente
+Gemini
 
-Segurança
+ChatGPT
 
-- Firebase Authentication
-- Criptografia ponta a ponta
-- Privacy by Design
+Claude
+
+Llama
+
+DeepSeek
+
+Modelos futuros
 
 ---
 
@@ -319,19 +433,34 @@ Segurança
 FranciOS
 
 docs/
-├── README.md
-├── Visao.md
-├── Arquitetura.md
-├── BancoDeDados.md
-├── IA.md
-├── LifeEngine.md
-├── MemoryEngine.md
-├── PredictionEngine.md
-├── EventEngine.md
-├── PrivacyArchitecture.md
-├── API.md
-├── UX.md
-├── Roadmap.md
+
+README.md
+
+Manifesto.md
+
+Arquitetura.md
+
+BancoDeDados.md
+
+IA.md
+
+PrivacyArchitecture.md
+
+Gamification.md
+
+LifeEngine.md
+
+MemoryEngine.md
+
+PredictionEngine.md
+
+EventEngine.md
+
+API.md
+
+UX.md
+
+Roadmap.md
 
 app/
 
@@ -350,81 +479,122 @@ LICENSE
 
 ---
 
+# 📖 Documentação Oficial
+
+✔ README
+
+✔ Manifesto
+
+✔ Arquitetura
+
+✔ Banco de Dados
+
+✔ IA
+
+✔ Privacidade
+
+✔ Gamificação
+
+✔ Life Engine
+
+✔ Memory Engine
+
+✔ Prediction Engine
+
+✔ Event Engine
+
+✔ API
+
+✔ UX
+
+✔ Roadmap
+
+---
+
 # 🛣 Roadmap
 
 ## Versão 0.1
 
 - Cadastro
+- Login
 - Dashboard
-- Life Engine
-- IA
 - Firebase
+- IA
 
 ---
 
 ## Versão 0.5
 
 - Planejamento Inteligente
-- Hábitos
-- Estudos
 - Alimentação
 - Sono
+- Hábitos
+- Estudos
 
 ---
 
 ## Versão 1.0
 
 - Prediction Engine
-- Conselho de Especialistas
 - Life Mentor
 - Dashboard Completo
+- Gamificação
 
 ---
 
 ## Versão 2.0
 
-- Smartwatch
 - Google Fit
 - Apple Health
 - Samsung Health
 - Open Finance
+- Smartwatch
 
 ---
 
 ## Versão 3.0
 
-- Modo Offline Completo
 - IA Local
 - Modo Soberano
+- Privacidade Máxima
+- Agentes Autônomos
 
 ---
 
 ## Versão 4.0
 
-- Identidade Descentralizada (DID)
-- Credenciais Verificáveis
 - Web3
+- Identidade Descentralizada
 - Gêmeo Digital
-- Agentes Autônomos
+- IA Preditiva Avançada
 
 ---
 
-# 🌎 Filosofia
+# 🌍 Manifesto
 
-O FranciOS acredita que:
+Nós acreditamos que:
 
-- Dados só têm valor quando ajudam pessoas.
-- A tecnologia deve ampliar a inteligência humana.
-- Saúde vale mais que produtividade.
-- Equilíbrio vale mais que velocidade.
-- Privacidade é um direito.
-- IA deve orientar, nunca controlar.
+A tecnologia deve servir às pessoas.
+
+A IA deve orientar.
+
+Jamais controlar.
+
+A saúde vale mais que a produtividade.
+
+A privacidade vale mais que a conveniência.
+
+O tempo vale mais que qualquer algoritmo.
+
+Os dados pertencem ao usuário.
+
+Sempre.
 
 ---
 
 # 👨‍💻 Fundador
 
-**Roberto Martins Paz**
+Roberto Martins Paz
 
 Idealizador do FranciOS.
 
@@ -432,7 +602,7 @@ Idealizador do FranciOS.
 
 # ❤️ Homenagem
 
-O nome **FranciOS** é uma homenagem à Franciele, inspiração para o nascimento deste projeto.
+O nome **FranciOS** é uma homenagem à Franciele, inspiração para a criação deste projeto.
 
 ---
 
@@ -448,8 +618,10 @@ Todos os direitos reservados.
 
 # FranciOS
 
-### O Sistema Operacional da Vida
+## O Sistema Operacional da Vida
 
-**Sua vida. Seus dados. Seu controle.**
+### Sua vida. Seus dados. Seu controle.
+
+🌎 Construindo o futuro da Inteligência Artificial centrada no ser humano.
 
 </div>
