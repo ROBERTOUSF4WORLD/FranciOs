@@ -1,276 +1,126 @@
 # 🧠 FranciOS
 
-> O Sistema Operacional da Sua Vida.
+<div align="center">
 
-FranciOS é uma plataforma de Inteligência Artificial criada para atuar como um mentor pessoal, analisando continuamente todas as áreas da vida do usuário para gerar planejamento inteligente, equilíbrio entre corpo e mente, previsões, recomendações personalizadas e evolução contínua.
+# O Sistema Operacional da Sua Vida
+
+### Inteligência Artificial para evolução humana contínua
+
+[![Flutter](https://img.shields.io/badge/Flutter-3.x-blue.svg)]()
+[![Firebase](https://img.shields.io/badge/Firebase-Google-orange.svg)]()
+[![Gemini](https://img.shields.io/badge/Gemini-AI-purple.svg)]()
+[![License](https://img.shields.io/badge/License-Proprietary-red.svg)]()
+
+---
+
+**FranciOS** é uma plataforma de Inteligência Artificial criada para organizar, analisar e otimizar todas as áreas da vida do usuário.
+
+Mais do que um aplicativo de produtividade, o FranciOS funciona como um **Sistema Operacional Pessoal**, utilizando IA para transformar dados em decisões inteligentes.
+
+</div>
 
 ---
 
 # 🌎 Visão
 
-O FranciOS não é uma agenda.
+Vivemos em uma época onde existem aplicativos para tudo.
 
-Não é uma lista de tarefas.
+Um para exercícios.
 
-Não é apenas um aplicativo de produtividade.
+Outro para alimentação.
 
-O FranciOS é um **Sistema Operacional Pessoal (Personal Life Operating System)** que utiliza Inteligência Artificial para organizar, analisar e otimizar a vida humana.
+Outro para finanças.
 
-Seu objetivo é ajudar qualquer pessoa a viver melhor, tomar decisões mais inteligentes e alcançar seus objetivos sem comprometer saúde, relacionamentos ou estabilidade financeira.
+Outro para agenda.
+
+Outro para estudos.
+
+Outro para produtividade.
+
+O FranciOS une tudo isso em um único ecossistema inteligente.
+
+Seu objetivo é compreender a vida do usuário como um todo e ajudá-lo a evoluir continuamente.
 
 ---
 
 # 🎯 Missão
 
-Utilizar Inteligência Artificial para aumentar a qualidade de vida das pessoas através da análise contínua de hábitos, rotina, saúde, produtividade, relacionamentos e objetivos.
+Utilizar Inteligência Artificial para melhorar a qualidade de vida das pessoas através da integração entre:
+
+- Saúde
+- Trabalho
+- Alimentação
+- Sono
+- Estudos
+- Finanças
+- Relacionamentos
+- Hábitos
+- Objetivos
+- Bem-estar
 
 ---
 
 # 🚀 Objetivos
 
-- Maximizar a qualidade de vida
-- Melhorar a produtividade
+- Maximizar qualidade de vida
+- Organizar automaticamente a rotina
+- Melhorar produtividade
 - Equilibrar saúde física e mental
-- Auxiliar no crescimento financeiro
-- Desenvolver hábitos saudáveis
-- Criar um mentor pessoal inteligente
-- Antecipar problemas antes que aconteçam
+- Reduzir estresse
+- Melhorar decisões financeiras
+- Criar hábitos sustentáveis
+- Gerar planejamento inteligente
+- Prever problemas antes que aconteçam
 
 ---
 
-# 🧩 Módulos
+# 🧠 Como funciona
 
-## 👤 Perfil
+```
+Usuário
 
-Cadastro completo do usuário.
+↓
 
----
+Registros Diários
 
-## 💼 Trabalho
+↓
 
-Análise de:
+Life Engine
 
-- profissão
-- carga física
-- carga mental
-- estresse
-- produtividade
+↓
 
----
+Memory Engine
 
-## 🥗 Alimentação
+↓
 
-Registro alimentar.
+Conselho de Especialistas
 
-Cálculo de:
+↓
 
-- calorias
-- proteínas
-- carboidratos
-- gorduras
-- água
-- vitaminas
+Prediction Engine
 
----
+↓
 
-## 😴 Sono
+Life Mentor
 
-Controle de:
+↓
 
-- duração
-- qualidade
-- recuperação
-- fadiga
+Planejamento Inteligente
 
----
+↓
 
-## ❤️ Saúde
+Dashboard
 
-Monitoramento de:
+↓
 
-- sintomas
-- medicamentos
-- exercícios
-- pressão
-- frequência cardíaca
-
----
-
-## 🏋 Exercícios
-
-Registro de atividades físicas.
-
----
-
-## 💰 Finanças
-
-Controle de:
-
-- receitas
-- despesas
-- investimentos
-- metas
-
----
-
-## 📚 Estudos
-
-Planejamento de aprendizado.
-
----
-
-## ❤️ Relacionamentos
-
-Tempo dedicado a:
-
-- família
-- parceiro(a)
-- amigos
-
----
-
-## 🙏 Espiritualidade (Opcional)
-
-- oração
-- meditação
-- reflexão
-
----
-
-## 🎯 Objetivos
-
-Metas de:
-
-- curto prazo
-- médio prazo
-- longo prazo
-
----
-
-## 🔄 Hábitos
-
-Controle de hábitos positivos e negativos.
-
----
-
-## 😀 Humor
-
-Registro emocional diário.
-
----
-
-## ⚠ Estresse
-
-Análise de:
-
-- gatilhos
-- intensidade
-- frequência
-
----
-
-## 🧠 Aprendizado
-
-Histórico de evolução do usuário.
-
----
-
-# 🤖 FranciOS Brain
-
-O cérebro do sistema.
-
-É composto por vários motores inteligentes.
-
-## Energy Engine
-
-Calcula:
-
-- energia física
-- energia mental
-- energia emocional
-
----
-
-## Planning Engine
-
-Organiza automaticamente o dia.
-
----
-
-## Health Engine
-
-Analisa:
-
-- alimentação
-- sono
-- exercícios
-
----
-
-## Financial Engine
-
-Analisa:
-
-- gastos
-- receitas
-- metas
-
----
-
-## Relationship Engine
-
-Monitora o equilíbrio social.
-
----
-
-## Learning Engine
-
-Planeja estudos.
-
----
-
-## Prediction Engine
-
-Prevê:
-
-- fadiga
-- queda de produtividade
-- burnout
-- atraso em metas
-
----
-
-# 📊 Life Score
-
-Todos os dias o FranciOS calcula um índice geral baseado em:
-
-- Saúde
-- Energia
-- Trabalho
-- Estudos
-- Finanças
-- Relacionamentos
-- Hábitos
-- Sono
-- Humor
-
----
-
-# 💬 Mentor IA
-
-Todos os dias o usuário recebe:
-
-- Bom dia personalizado
-- Filosofia do dia
-- Planejamento inteligente
-- Resumo noturno
-- Relatório semanal
-- Relatório mensal
+Evolução Contínua
+```
 
 ---
 
 # 🏗 Arquitetura
 
+```
 Flutter
 
 ↓
@@ -287,11 +137,266 @@ Cloud Functions
 
 ↓
 
+Life Engine
+
+↓
+
+Memory Engine
+
+↓
+
 FranciOS Brain
 
 ↓
 
 Gemini AI
+```
+
+---
+
+# 🧩 Módulos
+
+## 👤 Perfil
+
+Cadastro completo do usuário.
+
+---
+
+## 💼 Trabalho
+
+Carga física
+
+Carga mental
+
+Produtividade
+
+Profissão
+
+Estresse
+
+---
+
+## 🥗 Alimentação
+
+Proteínas
+
+Carboidratos
+
+Vitaminas
+
+Água
+
+Calorias
+
+---
+
+## 😴 Sono
+
+Qualidade
+
+Recuperação
+
+Interrupções
+
+---
+
+## ❤️ Saúde
+
+Peso
+
+Exercícios
+
+Medicamentos
+
+Suplementação
+
+---
+
+## 💰 Finanças
+
+Receitas
+
+Despesas
+
+Patrimônio
+
+Metas
+
+---
+
+## 📚 Estudos
+
+Planejamento
+
+Cursos
+
+Leitura
+
+Aprendizagem
+
+---
+
+## ❤️ Relacionamentos
+
+Família
+
+Parceiro(a)
+
+Amigos
+
+Tempo de qualidade
+
+---
+
+## 🙏 Espiritualidade
+
+(Opcional)
+
+---
+
+## 🔄 Hábitos
+
+Hábitos positivos
+
+Hábitos negativos
+
+Sequências
+
+---
+
+## 😀 Humor
+
+Estado emocional
+
+---
+
+## ⚠ Estresse
+
+Nível
+
+Origem
+
+Gatilhos
+
+---
+
+# 🧠 FranciOS Brain
+
+O cérebro do sistema.
+
+É composto por cinco motores principais.
+
+## ⚙ Life Engine
+
+Motor matemático.
+
+Calcula:
+
+- Life Score
+- Energia Física
+- Energia Mental
+- Energia Emocional
+- Energia Financeira
+- Energia Social
+- Índice de Equilíbrio
+- Índice de Recuperação
+
+---
+
+## 🧠 Memory Engine
+
+Aprende continuamente.
+
+Descobre padrões.
+
+Conhece o comportamento do usuário.
+
+---
+
+## 🔮 Prediction Engine
+
+Prevê:
+
+- Burnout
+- Queda de produtividade
+- Má alimentação
+- Falta de sono
+- Atraso financeiro
+- Quebra de hábitos
+
+---
+
+## 👨‍⚕ Conselho de Especialistas
+
+Health Specialist
+
+Nutrition Specialist
+
+Financial Specialist
+
+Relationship Specialist
+
+Learning Specialist
+
+Productivity Specialist
+
+Work Specialist
+
+Habit Specialist
+
+Emotional Specialist
+
+Philosophy Specialist
+
+---
+
+## 👨‍🏫 Life Mentor
+
+Único agente que conversa diretamente com o usuário.
+
+Organiza.
+
+Explica.
+
+Planeja.
+
+Motiva.
+
+---
+
+# 📊 Life Score
+
+O FranciOS calcula diariamente:
+
+- Energia Física
+- Energia Mental
+- Energia Emocional
+- Energia Financeira
+- Energia Social
+- Energia Espiritual
+- Índice Geral de Equilíbrio
+
+---
+
+# 🤖 Recursos de IA
+
+✅ Planejamento Inteligente
+
+✅ Mensagens Personalizadas
+
+✅ Bom Dia Inteligente
+
+✅ Boa Noite Inteligente
+
+✅ Resumo Diário
+
+✅ Relatórios Semanais
+
+✅ Relatórios Mensais
+
+✅ Filosofias Personalizadas
+
+✅ Aprendizado Contínuo
 
 ---
 
@@ -299,11 +404,12 @@ Gemini AI
 
 - Flutter
 - Firebase
-- Firestore
+- Cloud Firestore
+- Firebase Authentication
 - Cloud Functions
 - Gemini AI
-- GitHub
 - Material Design 3
+- GitHub
 
 ---
 
@@ -311,24 +417,40 @@ Gemini AI
 
 - Android
 - iOS
-- Web (futuro)
-- Desktop (futuro)
+- Web (Futuro)
+- Desktop (Futuro)
 
 ---
 
-# 📌 Roadmap
+# 📂 Estrutura do Projeto
 
-## Versão 0.1
+```
+FranciOS
+
+docs/
+app/
+backend/
+firebase/
+assets/
+prompts/
+README.md
+```
+
+---
+
+# 📅 Roadmap
+
+## ✅ Versão 0.1
 
 - Login
 - Cadastro
 - Dashboard
-- Rotina
-- IA Mentor
+- IA
+- Planejamento
 
 ---
 
-## Versão 0.5
+## 🚀 Versão 0.5
 
 - Alimentação
 - Sono
@@ -338,30 +460,51 @@ Gemini AI
 
 ---
 
-## Versão 1.0
+## 🧠 Versão 1.0
 
-- IA Completa
-- Índices Inteligentes
-- Planejamento Automático
-- Relatórios
+- Life Engine
+- Prediction Engine
+- Conselho de Especialistas
+- Dashboard Inteligente
 
 ---
 
-## Versão 2.0
+## 🌍 Versão 2.0
 
 - Smartwatch
-- Reconhecimento por Foto
-- Voz
-- Wearables
-- IA Preditiva
+- Google Fit
+- Apple Health
+- Samsung Health
+- Open Finance
+- OpenAI
+- Claude
+- Modelos Locais
+
+---
+
+# 📖 Documentação
+
+- 📘 Visão
+- 📘 Arquitetura
+- 📘 Banco de Dados
+- 📘 IA
+- 📘 Life Engine
+- 📘 API
+- 📘 Roadmap
 
 ---
 
 # 👨‍💻 Fundador
 
-Roberto Martins Paz
+**Roberto Martins Paz**
 
 Idealizador e Arquiteto do FranciOS.
+
+---
+
+# ❤️ Homenagem
+
+O nome **FranciOS** é uma homenagem especial à Franciele, cuja inspiração contribuiu para o nascimento deste projeto.
 
 ---
 
@@ -370,3 +513,15 @@ Idealizador e Arquiteto do FranciOS.
 Em definição.
 
 Todos os direitos reservados.
+
+---
+
+<div align="center">
+
+## FranciOS
+
+### O Sistema Operacional da Sua Vida
+
+*"A tecnologia deve servir às pessoas, nunca controlá-las."*
+
+</div>
