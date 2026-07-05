@@ -1,55 +1,103 @@
-# Banco de Dados do FranciOS
+# FranciOS
+# BancoDeDados.md
 
-Versão 1.0
+Versão: 1.0
 
----
+Status: Documento Oficial
 
-# Objetivo
+Projeto: FranciOS
 
-O banco de dados do FranciOS foi projetado para armazenar toda a evolução do usuário de forma segura, organizada e escalável.
-
-Cada usuário possui seu próprio ambiente isolado através do Firebase Authentication.
-
-Nenhum usuário possui acesso aos dados de outro.
+Autor: Roberto Martins Paz
 
 ---
 
-# Tecnologia
+# Índice
 
-Backend:
+1. Objetivo
+2. Filosofia do Banco
+3. Tecnologias
+4. Estrutura Geral
+5. Coleções
+6. Estrutura do Usuário
+7. Módulos
+8. Life Engine
+9. Memory Engine
+10. Dashboard
+11. IA
+12. Segurança
+13. Versionamento
+14. Escalabilidade
+
+---
+
+# 1. Objetivo
+
+Este documento define oficialmente toda a estrutura de armazenamento de dados do FranciOS.
+
+Todo desenvolvimento deverá seguir esta especificação.
+
+---
+
+# 2. Filosofia
+
+O banco foi projetado para armazenar a evolução completa da vida do usuário.
+
+Não armazenamos apenas informações.
+
+Armazenamos contexto.
+
+Histórico.
+
+Mudanças.
+
+Padrões.
+
+Aprendizados.
+
+---
+
+# 3. Tecnologia
+
+Frontend
+
+Flutter
+
+Backend
 
 Firebase
 
-Banco:
+Banco
 
 Cloud Firestore
 
-Autenticação:
-
-Firebase Authentication
-
-Arquivos:
+Arquivos
 
 Firebase Storage
 
-Notificações:
+Autenticação
 
-Firebase Cloud Messaging
+Firebase Authentication
 
-IA:
+Processamento
+
+Cloud Functions
+
+IA
 
 Gemini
 
 ---
 
-# Estrutura Geral
+# 4. Estrutura Geral
+
+```
 
 users
 │
 ├── profile
 ├── work
-├── sleep
 ├── food
+├── sleep
 ├── health
 ├── exercises
 ├── finance
@@ -61,30 +109,56 @@ users
 ├── mood
 ├── stress
 ├── learning
-├── notifications
-├── ai
 ├── dashboard
-└── settings
+├── ai
+├── memory
+├── predictions
+├── settings
+└── notifications
+
+```
+
+Cada usuário possui uma estrutura totalmente isolada.
 
 ---
 
-# Collection
+# 5. Coleção Principal
+
+```
 
 users
 
-Documento:
+```
 
-UID do Firebase
+Documento
+
+```
+
+uid
+
+```
 
 Exemplo
 
+```
+
 users
 
-    u83h38dj39d
+KJH38DJF832HJK
+
+```
 
 ---
 
-# Profile
+# 6. Estrutura do Perfil
+
+```
+
+profile
+
+```
+
+Campos
 
 Nome
 
@@ -100,23 +174,37 @@ Peso
 
 Cidade
 
+Estado
+
+País
+
 Profissão
 
 Objetivos
 
-Tipo de trabalho
+Estado Civil
 
-Carga física
+Idioma
 
-Carga mental
+Fuso Horário
 
-Carga emocional
+Data de Cadastro
 
 ---
 
-# Trabalho
+# 7. Trabalho
+
+```
+
+work
+
+```
+
+Campos
 
 Data
+
+Profissão
 
 Horas Trabalhadas
 
@@ -126,9 +214,13 @@ Esforço Físico
 
 Esforço Mental
 
-Nível de Estresse
+Carga Emocional
 
 Produtividade
+
+Nível de Estresse
+
+Risco Ocupacional
 
 Acidentes
 
@@ -136,31 +228,19 @@ Observações
 
 ---
 
-# Sono
+# 8. Alimentação
+
+```
+
+food
+
+```
+
+Campos
 
 Data
 
-Dormiu às
-
-Acordou às
-
-Horas Dormidas
-
-Qualidade
-
-Interrupções
-
-Sonhos
-
-Recuperação
-
----
-
-# Alimentação
-
-Data
-
-Café da manhã
+Café da Manhã
 
 Almoço
 
@@ -176,15 +256,59 @@ Carboidratos
 
 Gorduras
 
+Calorias
+
 Vitaminas
 
 Minerais
 
-Calorias
+Cafeína
+
+Álcool
+
+Observações
 
 ---
 
-# Saúde
+# 9. Sono
+
+```
+
+sleep
+
+```
+
+Campos
+
+Data
+
+Dormiu
+
+Acordou
+
+Horas Dormidas
+
+Qualidade
+
+Interrupções
+
+Sonhos
+
+Recuperação
+
+Observações
+
+---
+
+# 10. Saúde
+
+```
+
+health
+
+```
+
+Campos
 
 Peso
 
@@ -192,9 +316,9 @@ Pressão
 
 Batimentos
 
-Oxigenação
-
 Temperatura
+
+Oxigenação
 
 Dor
 
@@ -206,9 +330,19 @@ Suplementos
 
 Exames
 
+Observações
+
 ---
 
-# Exercícios
+# 11. Exercícios
+
+```
+
+exercises
+
+```
+
+Campos
 
 Tipo
 
@@ -218,13 +352,23 @@ Intensidade
 
 Calorias
 
-Frequência Cardíaca
+Distância
+
+Batimentos
 
 Observações
 
 ---
 
-# Finanças
+# 12. Finanças
+
+```
+
+finance
+
+```
+
+Campos
 
 Receitas
 
@@ -232,67 +376,107 @@ Despesas
 
 Investimentos
 
+Patrimônio
+
 Dívidas
 
-Economia
+Metas
 
-Objetivos Financeiros
+Fluxo de Caixa
 
-Patrimônio
+Reserva Financeira
+
+Categoria
+
+Descrição
 
 ---
 
-# Estudos
+# 13. Estudos
+
+```
+
+studies
+
+```
+
+Campos
 
 Curso
 
-Tempo
-
 Tema
 
-Nível
+Tempo
 
 Progresso
 
 Notas
 
+Nível
+
 Observações
 
 ---
 
-# Relacionamentos
+# 14. Relacionamentos
+
+```
+
+relationships
+
+```
+
+Campos
 
 Pessoa
 
-Tipo
+Categoria
 
-Tempo
-
-Qualidade
+Tempo de Qualidade
 
 Humor
 
 Conflitos
 
-Momentos Felizes
+Momentos Positivos
+
+Observações
 
 ---
 
-# Espiritualidade
+# 15. Espiritualidade
+
+```
+
+spirituality
+
+```
+
+Campos
 
 Oração
 
-Leitura
-
 Meditação
+
+Leitura
 
 Gratidão
 
 Reflexão
 
+Observações
+
 ---
 
-# Objetivos
+# 16. Objetivos
+
+```
+
+goals
+
+```
+
+Campos
 
 Título
 
@@ -306,9 +490,19 @@ Status
 
 Progresso
 
+Observações
+
 ---
 
-# Hábitos
+# 17. Hábitos
+
+```
+
+habits
+
+```
+
+Campos
 
 Nome
 
@@ -322,9 +516,19 @@ Falhas
 
 Última Execução
 
+Observações
+
 ---
 
-# Humor
+# 18. Humor
+
+```
+
+mood
+
+```
+
+Campos
 
 Felicidade
 
@@ -344,7 +548,15 @@ Observações
 
 ---
 
-# Estresse
+# 19. Estresse
+
+```
+
+stress
+
+```
+
+Campos
 
 Nível
 
@@ -356,47 +568,45 @@ Sintomas
 
 Como resolveu
 
----
-
-# Aprendizado
-
-Lições
-
-Erros
-
-Acertos
-
-Conquistas
-
-Reflexões
+Observações
 
 ---
 
-# IA
+# 20. Aprendizado
 
-Resumo Diário
+```
 
-Resumo Semanal
+learning
 
-Resumo Mensal
+```
 
-Planejamento
+Campos
 
-Mensagem Bom Dia
+Conquista
 
-Mensagem Boa Noite
+Erro
 
-Filosofia
+Lição
 
-Conselhos
+Reflexão
 
-Alertas
+Melhoria
 
-Previsões
+Observações
 
 ---
 
-# Dashboard
+# 21. Dashboard
+
+```
+
+dashboard
+
+```
+
+Campos
+
+Life Score
 
 Energia Física
 
@@ -410,17 +620,123 @@ Energia Social
 
 Energia Espiritual
 
-Life Score
+Índice de Recuperação
 
-Equilíbrio Geral
+Índice de Equilíbrio
 
 Produtividade
 
-Qualidade de Vida
+Última Atualização
 
 ---
 
-# Configurações
+# 22. IA
+
+```
+
+ai
+
+```
+
+Campos
+
+Resumo Diário
+
+Resumo Semanal
+
+Resumo Mensal
+
+Planejamento
+
+Bom Dia
+
+Boa Noite
+
+Conselhos
+
+Filosofia
+
+Alertas
+
+Recomendações
+
+---
+
+# 23. Memory Engine
+
+```
+
+memory
+
+```
+
+Responsável por registrar:
+
+Mudanças de hábitos
+
+Mudanças de rotina
+
+Mudanças financeiras
+
+Mudanças emocionais
+
+Mudanças físicas
+
+Mudanças profissionais
+
+Aprendizados
+
+Eventos importantes
+
+Padrões identificados
+
+---
+
+# 24. Prediction Engine
+
+```
+
+predictions
+
+```
+
+Campos
+
+Tipo
+
+Probabilidade
+
+Impacto
+
+Data
+
+Status
+
+Descrição
+
+Sugestão
+
+Exemplos
+
+Burnout
+
+Fadiga
+
+Atraso Financeiro
+
+Baixa Produtividade
+
+Sedentarismo
+
+---
+
+# 25. Configurações
+
+```
+
+settings
+
+```
 
 Tema
 
@@ -428,137 +744,156 @@ Idioma
 
 Notificações
 
-Backup
-
 Privacidade
 
 Permissões
 
-API Gemini
+APIs
 
-API OpenAI
+Backup
 
----
-
-# Histórico
-
-Toda alteração realizada pelo usuário gera um histórico.
-
-Nada é perdido.
-
-O FranciOS aprende continuamente.
+Sincronização
 
 ---
 
-# IA Brain
+# 26. Notificações
 
-A IA utilizará todos os módulos para calcular:
+```
 
-Life Score
+notifications
 
-↓
+```
+
+Campos
+
+Título
+
+Mensagem
+
+Tipo
+
+Lida
+
+Data
+
+Origem
+
+Prioridade
+
+---
+
+# 27. Life Engine
+
+O Life Engine utiliza dados de todas as coleções para calcular:
 
 Energia Física
 
-↓
-
 Energia Mental
-
-↓
 
 Energia Emocional
 
-↓
-
 Energia Financeira
-
-↓
 
 Energia Social
 
-↓
+Energia Espiritual
 
-Índice de Estresse
-
-↓
+Índice de Evolução
 
 Índice de Recuperação
 
-↓
+Índice de Consistência
 
-Planejamento Diário
+Life Score
 
-↓
-
-Planejamento Semanal
-
-↓
-
-Planejamento Mensal
-
-↓
-
-Mensagens Inteligentes
-
-↓
-
-Previsões
+Nenhum cálculo é armazenado permanentemente sem histórico.
 
 ---
 
-# Segurança
+# 28. Histórico
 
-Firebase Authentication
+Toda alteração gera um evento.
 
-Criptografia
+Exemplo.
 
-Backup Automático
+Usuário aumentou ingestão de água.
 
-Sincronização Offline
+↓
 
-Cloud Functions
+Novo evento.
 
-Controle de acesso por UID
+↓
+
+Memory Engine registra.
+
+↓
+
+Prediction Engine atualiza previsões.
+
+↓
+
+Life Mentor adapta planejamento.
 
 ---
 
-# Escalabilidade
+# 29. Segurança
 
-O banco foi projetado para suportar milhões de usuários sem necessidade de alteração estrutural.
+Todos os documentos pertencem ao UID do usuário.
 
-Cada módulo poderá receber novos campos sem impactar os demais.
+Regras obrigatórias.
+
+Autenticação.
+
+Criptografia.
+
+Cloud Functions.
+
+Logs.
+
+Backup.
+
+Controle de acesso.
 
 ---
 
-# Futuras Integrações
+# 30. Escalabilidade
 
-Google Fit
+O banco suporta:
 
-Samsung Health
+Milhões de usuários.
 
-Apple Health
+Novos módulos.
 
-Garmin
+Novos sensores.
 
-Fitbit
+Wearables.
 
-Calendário Google
+Open Finance.
 
-Outlook
+Google Fit.
 
-WhatsApp
+Apple Health.
 
-Telegram
+Samsung Health.
 
-Pix
+Novas IA.
 
-Open Finance
+Sem necessidade de alteração estrutural.
 
-Wearables
+---
 
-IoT
+# Princípio Supremo
 
-Veículos
+O banco de dados do FranciOS não foi projetado apenas para armazenar informações.
 
-Casa Inteligente
+Ele foi projetado para registrar a evolução da vida humana.
 
+Todo dado armazenado deve contribuir para gerar conhecimento, contexto e decisões mais inteligentes.
+
+---
+
+Documento Oficial do Banco de Dados
+
+Projeto FranciOS
+
+Versão 1.0
