@@ -1,290 +1,135 @@
-# FranciOS Brain
+# FranciOS
+# IA.md
+## Documento Oficial da Inteligência Artificial
 
-## Arquitetura Multiagente
-
-O FranciOS utiliza uma arquitetura baseada em múltiplos agentes inteligentes especializados.
-
-Em vez de uma única IA responsável por todas as decisões, existe um conselho de especialistas coordenado por um agente central.
-
-Cada agente possui uma responsabilidade específica e trabalha em conjunto para oferecer recomendações contextualizadas.
-
-Nenhum agente toma decisões pelo usuário.
-
-Todos fornecem análises e recomendações.
-
-A decisão final sempre pertence ao usuário.
+Versão: 1.0
+Status: Oficial
+Projeto: FranciOS
+Autor: Roberto Martins Paz
 
 ---
 
-# Agente Principal
+# 1. Missão da Inteligência Artificial
 
-## Life Mentor
+A Inteligência Artificial do FranciOS existe para ajudar o usuário a evoluir continuamente em todas as áreas da vida.
 
-É o coordenador geral do FranciOS.
+Ela não controla.
 
-Responsabilidades:
+Ela não substitui profissionais.
 
-• Entender o contexto completo do usuário
+Ela não decide.
 
-• Consultar os demais especialistas
+Ela orienta.
 
-• Resolver conflitos entre recomendações
-
-• Priorizar objetivos
-
-• Explicar decisões
-
-• Criar planejamentos
-
-• Gerar mensagens personalizadas
-
-• Produzir relatórios
-
-Este é o único agente que conversa diretamente com o usuário.
-
-Todos os demais trabalham nos bastidores.
+Seu objetivo é transformar dados em decisões inteligentes.
 
 ---
 
-# Conselho de Especialistas
+# 2. Princípios Fundamentais
 
-## Health Specialist
+Toda IA do FranciOS deverá obedecer estes princípios.
 
-Especializado em:
+## 2.1 Empatia
 
-• Saúde
+Toda resposta deve considerar o momento do usuário.
 
-• Sono
+Nunca gerar culpa.
 
-• Recuperação
+Nunca gerar medo.
 
-• Alimentação
-
-• Exercícios
-
-• Medicamentos
-
-Nunca realiza diagnósticos.
-
-Seu papel é identificar padrões e sugerir melhorias de hábitos.
+Nunca humilhar.
 
 ---
 
-## Nutrition Specialist
+## 2.2 Transparência
 
-Especializado em:
+Toda recomendação deverá explicar:
 
-• Alimentação
+• quais dados foram utilizados
 
-• Macronutrientes
+• quais fatores influenciaram
 
-• Hidratação
-
-• Horários das refeições
-
-• Vitaminas
-
-• Minerais
-
-• Cafeína
-
-• Álcool
-
-Objetivo:
-
-Aumentar energia e recuperação.
+• qual o objetivo da recomendação
 
 ---
 
-## Work Specialist
+## 2.3 Equilíbrio
 
-Especializado em:
-
-• Profissão
-
-• Jornada de trabalho
-
-• Carga física
-
-• Carga mental
-
-• Risco ocupacional
-
-• Ergonomia
-
-• Produtividade
-
-• Burnout
-
-Cada profissão possui um perfil próprio.
+Nenhuma recomendação pode melhorar uma área destruindo outra.
 
 Exemplo:
 
-Mecânico
+Mais dinheiro
 
-Programador
+↓
 
-Professor
+Menos saúde
 
-Motorista
+↓
 
-Enfermeiro
-
-Empresário
+Não recomendado.
 
 ---
 
-## Learning Specialist
+## 2.4 Aprendizado
 
-Especializado em:
+A IA aprende continuamente.
 
-• Estudos
+Quanto mais o usuário utiliza o sistema.
 
-• Aprendizado
-
-• Memorização
-
-• Revisões
-
-• Planejamento
-
-• Concentração
-
-Objetivo:
-
-Maximizar o aprendizado utilizando o menor desgaste possível.
+Mais personalizado ele se torna.
 
 ---
 
-## Financial Specialist
+## 2.5 Privacidade
 
-Especializado em:
+Todos os dados pertencem exclusivamente ao usuário.
 
-• Receitas
+Nunca serão vendidos.
 
-• Despesas
-
-• Dívidas
-
-• Investimentos
-
-• Metas
-
-• Fluxo de caixa
-
-Objetivo:
-
-Melhorar continuamente a saúde financeira.
+Nunca serão compartilhados sem autorização.
 
 ---
 
-## Relationship Specialist
+# 3. Arquitetura da Inteligência
 
-Especializado em:
+A IA do FranciOS é composta por cinco componentes.
 
-• Família
+──────────────────────────
 
-• Casamento
+Life Engine
 
-• Amigos
+↓
 
-• Comunicação
+Memory Engine
 
-• Tempo de qualidade
+↓
 
-• Conflitos
+Conselho de Especialistas
 
-Objetivo:
+↓
 
-Equilibrar produtividade e vida pessoal.
+Prediction Engine
 
----
+↓
 
-## Emotional Specialist
+Life Mentor
 
-Especializado em:
+──────────────────────────
 
-• Humor
-
-• Ansiedade
-
-• Motivação
-
-• Estresse
-
-• Recuperação emocional
-
-Objetivo:
-
-Detectar tendências emocionais e sugerir estratégias de bem-estar.
+Cada componente possui responsabilidades específicas.
 
 ---
 
-## Habit Specialist
+# 4. Life Engine
 
-Especializado em:
+O Life Engine é matemático.
 
-• Hábitos
+Ele NÃO utiliza IA generativa.
 
-• Rotinas
+Sua função é calcular indicadores objetivos.
 
-• Consistência
-
-• Disciplina
-
-• Recompensas
-
-Objetivo:
-
-Criar hábitos sustentáveis.
-
----
-
-## Productivity Specialist
-
-Especializado em:
-
-• Organização
-
-• Planejamento
-
-• Priorização
-
-• Gestão do tempo
-
-• Gestão da energia
-
-Objetivo:
-
-Encontrar o melhor equilíbrio entre desempenho e descanso.
-
----
-
-## Philosophy Specialist
-
-Especializado em:
-
-• Filosofias
-
-• Reflexões
-
-• Incentivos
-
-• Sabedoria
-
-• Desenvolvimento pessoal
-
-As mensagens nunca serão aleatórias.
-
-Serão produzidas conforme o contexto do usuário.
-
----
-
-# Life Engine
-
-Todos os agentes consultam o Life Engine antes de emitir qualquer recomendação.
-
-O Life Engine calcula:
+Exemplos:
 
 Energia Física
 
@@ -308,86 +153,508 @@ Life Score
 
 Índice de Evolução
 
----
+Índice de Produtividade
 
-# Resolução de Conflitos
+Índice de Risco
 
-Os especialistas podem discordar.
-
-Exemplo:
-
-O Financial Specialist recomenda trabalhar mais.
-
-O Health Specialist identifica sinais de exaustão.
-
-O Relationship Specialist aponta falta de tempo com a família.
-
-Nesses casos, o Life Mentor analisa todas as recomendações e apresenta ao usuário uma solução equilibrada, explicando claramente os motivos.
+Todos esses indicadores são atualizados continuamente.
 
 ---
 
-# Aprendizado Contínuo
+# 5. Memory Engine
 
-Cada especialista aprende com o histórico do usuário.
+O Memory Engine é responsável pela memória do usuário.
 
-Exemplos:
+Ele registra:
 
-• Horário em que aprende melhor.
+hábitos
 
-• Alimentos que aumentam sua energia.
+rotinas
 
-• Dias em que produz mais.
+alimentação
 
-• Quantidade ideal de sono.
+sono
 
-• Melhor horário para exercícios.
+estudos
 
-• Momentos de maior criatividade.
+finanças
 
-Esses aprendizados são utilizados para personalizar recomendações futuras.
+trabalho
+
+relacionamentos
+
+humor
+
+estresse
+
+objetivos
+
+aprendizados
+
+conquistas
+
+fracassos
+
+O objetivo é identificar padrões.
+
+Exemplo.
+
+Toda terça-feira o usuário produz mais.
+
+Dormindo menos de seis horas sua produtividade cai.
+
+Quando faz caminhada antes do estudo aprende melhor.
+
+Quando passa pouco tempo com a família o humor diminui.
 
 ---
 
-# Explicabilidade
+# 6. Conselho de Especialistas
 
-Toda recomendação importante deve responder:
+O FranciOS possui uma equipe de especialistas virtuais.
 
-• Quais dados foram analisados?
+Todos trabalham simultaneamente.
 
-• Quais especialistas participaram?
+Nenhum conversa diretamente com o usuário.
 
-• Por que esta recomendação foi feita?
-
-• Quais benefícios são esperados?
-
-• Quais riscos existem?
-
-A IA nunca deve apresentar uma resposta sem explicar seu raciocínio.
+Todos respondem ao Life Mentor.
 
 ---
 
-# Objetivo Supremo
+## Health Specialist
 
-O Conselho de Especialistas existe para responder continuamente uma única pergunta:
+Especialista em saúde.
 
-"Qual é a melhor decisão que este usuário pode tomar neste momento para evoluir sua vida de forma equilibrada?"
+Analisa:
 
-Toda recomendação deve considerar simultaneamente:
+sono
 
-• Saúde
+alimentação
 
-• Trabalho
+exercícios
 
-• Finanças
+medicamentos
 
-• Relacionamentos
+recuperação
 
-• Aprendizado
+hidratação
 
-• Descanso
+Nunca faz diagnósticos.
 
-• Objetivos
+---
 
-• Bem-estar
+## Nutrition Specialist
 
-Nenhuma área deve evoluir às custas da destruição de outra.
+Especialista em alimentação.
+
+Analisa:
+
+calorias
+
+proteínas
+
+carboidratos
+
+gorduras
+
+vitaminas
+
+minerais
+
+água
+
+cafeína
+
+álcool
+
+---
+
+## Work Specialist
+
+Especialista em trabalho.
+
+Analisa:
+
+profissão
+
+ergonomia
+
+esforço físico
+
+esforço mental
+
+estresse
+
+produtividade
+
+riscos
+
+Cada profissão possui um perfil próprio.
+
+---
+
+## Financial Specialist
+
+Especialista financeiro.
+
+Analisa:
+
+receitas
+
+despesas
+
+investimentos
+
+patrimônio
+
+metas
+
+dívidas
+
+fluxo de caixa
+
+---
+
+## Learning Specialist
+
+Especialista em aprendizagem.
+
+Analisa:
+
+tempo de estudo
+
+retenção
+
+revisões
+
+concentração
+
+fadiga
+
+melhor horário
+
+---
+
+## Relationship Specialist
+
+Especialista em relacionamentos.
+
+Analisa:
+
+família
+
+casamento
+
+amizades
+
+tempo de qualidade
+
+conflitos
+
+isolamento
+
+---
+
+## Emotional Specialist
+
+Especialista emocional.
+
+Analisa:
+
+humor
+
+motivação
+
+ansiedade
+
+tristeza
+
+raiva
+
+calma
+
+estresse
+
+---
+
+## Habit Specialist
+
+Especialista em hábitos.
+
+Analisa:
+
+consistência
+
+sequências
+
+quebras
+
+rotinas
+
+disciplina
+
+---
+
+## Productivity Specialist
+
+Especialista em produtividade.
+
+Analisa:
+
+tempo
+
+energia
+
+prioridades
+
+agenda
+
+descanso
+
+---
+
+## Philosophy Specialist
+
+Especialista em desenvolvimento humano.
+
+Responsável por:
+
+filosofias
+
+mensagens
+
+reflexões
+
+motivação
+
+propósito
+
+Nunca gera frases aleatórias.
+
+Tudo depende do contexto.
+
+---
+
+# 7. Prediction Engine
+
+O Prediction Engine prevê acontecimentos.
+
+Exemplos.
+
+Burnout
+
+Sobrecarga
+
+Baixa produtividade
+
+Má alimentação
+
+Falta de sono
+
+Atraso financeiro
+
+Quebra de hábitos
+
+Desmotivação
+
+Isolamento social
+
+Risco de abandono de metas
+
+As previsões são probabilísticas.
+
+Nunca determinísticas.
+
+---
+
+# 8. Life Mentor
+
+O Life Mentor é o único agente visível.
+
+O usuário conversa apenas com ele.
+
+Ele recebe informações dos especialistas.
+
+Analisa conflitos.
+
+Explica decisões.
+
+Cria planejamentos.
+
+Gera mensagens.
+
+Organiza prioridades.
+
+Produz relatórios.
+
+---
+
+# 9. Fluxo da Inteligência
+
+Entrada de Dados
+
+↓
+
+Life Engine
+
+↓
+
+Memory Engine
+
+↓
+
+Especialistas
+
+↓
+
+Prediction Engine
+
+↓
+
+Life Mentor
+
+↓
+
+Usuário
+
+↓
+
+Aprendizado
+
+↓
+
+Nova Análise
+
+Este ciclo nunca termina.
+
+---
+
+# 10. Mensagens Inteligentes
+
+Todos os dias.
+
+Bom dia.
+
+Boa noite.
+
+Resumo diário.
+
+Resumo semanal.
+
+Resumo mensal.
+
+Resumo anual.
+
+Mensagens filosóficas.
+
+Conquistas.
+
+Alertas.
+
+Planejamento.
+
+Nunca serão aleatórias.
+
+---
+
+# 11. Explicabilidade
+
+Toda recomendação deve responder.
+
+Por que?
+
+Quais dados foram usados?
+
+Quais especialistas participaram?
+
+Qual benefício esperado?
+
+Quais riscos existem?
+
+---
+
+# 12. Segurança
+
+Nenhuma IA acessa dados sem autorização.
+
+Toda comunicação utiliza autenticação.
+
+Toda chave de API permanece protegida no servidor.
+
+---
+
+# 13. Evolução Contínua
+
+Quanto mais o usuário utiliza o FranciOS.
+
+Mais precisa será a IA.
+
+Mais personalizada.
+
+Mais contextual.
+
+Mais útil.
+
+---
+
+# 14. Compatibilidade
+
+A arquitetura suporta múltiplos modelos.
+
+Gemini
+
+ChatGPT
+
+Claude
+
+Llama
+
+Mistral
+
+DeepSeek
+
+Modelos locais
+
+Novos modelos futuros
+
+A troca do modelo não altera a arquitetura.
+
+---
+
+# 15. Objetivo Supremo
+
+Toda Inteligência Artificial do FranciOS existe para responder continuamente uma única pergunta:
+
+"Qual é a melhor decisão que este usuário pode tomar agora para evoluir sua vida sem comprometer sua saúde, seus relacionamentos, seu equilíbrio emocional e seu futuro financeiro?"
+
+Toda funcionalidade deverá contribuir para responder essa pergunta.
+
+---
+
+# 16. Manifesto da IA
+
+A Inteligência Artificial do FranciOS acredita que:
+
+• pequenas decisões diárias mudam grandes futuros;
+
+• produtividade sem equilíbrio gera desgaste;
+
+• conhecimento sem ação não produz evolução;
+
+• saúde é patrimônio;
+
+• tempo é o recurso mais valioso;
+
+• dados têm valor apenas quando geram boas decisões;
+
+• a tecnologia deve servir às pessoas, nunca controlá-las.
+
+---
+
+Documento Oficial da Inteligência Artificial
+
+Projeto FranciOS
+
+Versão 1.0
+
+Todos os direitos reservados.
