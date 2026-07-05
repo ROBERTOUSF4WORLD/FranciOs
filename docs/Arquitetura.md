@@ -1,27 +1,85 @@
-
 # FranciOS
-# Documento de Arquitetura
-Versão 1.0
+# Arquitetura.md
+
+Versão: 1.0
+
+Autor: Roberto Martins Paz
+
+Status: Documento Oficial
 
 ---
 
-# 1. Objetivo
+# Índice
 
-Este documento define a arquitetura oficial do FranciOS.
-
-Todo desenvolvimento deverá seguir esta especificação.
-
-O objetivo é garantir escalabilidade, segurança, manutenção simples e evolução contínua do sistema.
+1. Visão Geral
+2. Objetivos da Arquitetura
+3. Princípios Arquiteturais
+4. Arquitetura Geral
+5. Componentes do Sistema
+6. Life Engine
+7. Memory Engine
+8. Conselho de Especialistas
+9. Prediction Engine
+10. Life Mentor
+11. Estrutura do Projeto
+12. Arquitetura Flutter
+13. Arquitetura Firebase
+14. Fluxo dos Dados
+15. Fluxo da IA
+16. Segurança
+17. Escalabilidade
+18. Offline First
+19. Roadmap Arquitetural
 
 ---
 
-# 2. Filosofia da Arquitetura
+# 1. Visão Geral
 
-O FranciOS foi desenvolvido seguindo cinco princípios.
+O FranciOS foi projetado como um Sistema Operacional Pessoal baseado em Inteligência Artificial.
 
-## Simplicidade
+Sua arquitetura foi construída para suportar milhões de usuários, mantendo baixo custo operacional, alta escalabilidade e evolução contínua.
 
-Cada módulo possui apenas uma responsabilidade.
+O projeto utiliza arquitetura modular baseada em Clean Architecture.
+
+---
+
+# 2. Objetivos da Arquitetura
+
+A arquitetura deve garantir:
+
+• Simplicidade
+
+• Escalabilidade
+
+• Modularização
+
+• Baixo acoplamento
+
+• Alta coesão
+
+• Segurança
+
+• Evolução contínua
+
+• Fácil manutenção
+
+• Independência da IA utilizada
+
+---
+
+# 3. Princípios Arquiteturais
+
+Toda funcionalidade deve obedecer aos seguintes princípios.
+
+## Separação de Responsabilidades
+
+Cada componente possui apenas uma responsabilidade.
+
+---
+
+## Independência
+
+Nenhum módulo conhece detalhes internos de outro módulo.
 
 ---
 
@@ -31,61 +89,87 @@ Novos módulos poderão ser adicionados sem alterar os existentes.
 
 ---
 
-## Modularização
+## Testabilidade
 
-Todo componente deve ser independente.
-
----
-
-## Inteligência
-
-Toda decisão do sistema deverá passar pelo FranciOS Brain.
+Todo componente deverá ser facilmente testável.
 
 ---
 
-## Segurança
+## IA Independente
 
-Todos os dados pertencem exclusivamente ao usuário.
+A arquitetura não depende do Gemini.
 
----
-
-# 3. Arquitetura Geral
-
-                FranciOS Mobile
-                       │
-                       │
-                Flutter Application
-                       │
-──────────────────────────────────────────────
-                Presentation Layer
-                       │
-──────────────────────────────────────────────
-                 Business Layer
-                       │
-──────────────────────────────────────────────
-                  Life Engine
-                       │
-──────────────────────────────────────────────
-                FranciOS Brain
-                       │
-──────────────────────────────────────────────
-                Data Layer
-                       │
-──────────────────────────────────────────────
-              Firebase Cloud
-                       │
-──────────────────────────────────────────────
-                Gemini AI
+Qualquer IA poderá ser utilizada.
 
 ---
 
-# 4. Camadas
+# 4. Arquitetura Geral
+
+```
+                    FranciOS
+
+                     Mobile
+
+                        │
+
+                 Presentation Layer
+
+                        │
+
+                 Application Layer
+
+                        │
+
+                  Business Layer
+
+                        │
+
+                   Life Engine
+
+                        │
+
+                 Memory Engine
+
+                        │
+
+             Conselho de Especialistas
+
+                        │
+
+                Prediction Engine
+
+                        │
+
+                  Life Mentor
+
+                        │
+
+                  Data Layer
+
+                        │
+
+                    Firebase
+
+                        │
+
+                IA Generativa
+```
+
+---
+
+# 5. Componentes
 
 ## Presentation Layer
 
 Responsável pela interface.
 
-Contém:
+Nunca realiza cálculos.
+
+Nunca acessa IA.
+
+Nunca acessa Firebase diretamente.
+
+Responsabilidades:
 
 • Telas
 
@@ -95,39 +179,65 @@ Contém:
 
 • Temas
 
-• Widgets
+---
 
-Nunca contém regras de negócio.
+## Application Layer
+
+Responsável por coordenar os módulos.
+
+Controla:
+
+Fluxos
+
+Eventos
+
+Estados
+
+Permissões
 
 ---
 
 ## Business Layer
 
-Responsável pelas regras.
+Onde vivem as regras de negócio.
 
-Exemplos:
+Exemplos.
 
-Calcular Life Score
+Calcular metas.
 
-Calcular Energia
+Calcular evolução.
 
-Planejar Semana
-
-Gerar Dashboard
-
-Gerar Alertas
+Calcular Life Score.
 
 ---
 
-## Life Engine
+## Data Layer
 
-É o motor matemático.
+Responsável por:
 
-Ele NÃO usa IA.
+Salvar
 
-Ele calcula.
+Atualizar
 
-Exemplo:
+Excluir
+
+Consultar
+
+Sincronizar
+
+Nunca realiza cálculos.
+
+---
+
+# 6. Life Engine
+
+O Life Engine é o motor matemático.
+
+Ele NÃO utiliza IA.
+
+Sua responsabilidade é transformar dados em indicadores.
+
+Calcula:
 
 Energia Física
 
@@ -137,255 +247,197 @@ Energia Emocional
 
 Energia Financeira
 
-Índice Geral
+Energia Social
 
-Equilíbrio
+Energia Espiritual
 
-Consistência
+Índice de Recuperação
 
-Recuperação
+Índice de Evolução
 
-Produtividade
-
----
-
-## FranciOS Brain
-
-É o cérebro.
-
-Utiliza IA.
-
-Responsável por:
-
-interpretar
-
-aconselhar
-
-explicar
-
-motivar
-
-prever
-
-planejar
-
----
-
-## Data Layer
-
-Responsável pelo acesso aos dados.
-
-Nunca faz cálculos.
-
-Nunca cria mensagens.
-
-Apenas:
-
-Salvar
-
-Buscar
-
-Atualizar
-
-Excluir
-
-Sincronizar
-
----
-
-# 5. Life Engine
-
-O Life Engine é o principal diferencial do FranciOS.
-
-Ele calcula continuamente diversos índices.
-
-## Índice de Energia Física
-
-Baseado em:
-
-Sono
-
-Exercícios
-
-Alimentação
-
-Profissão
-
-Carga Física
-
-Dor
-
-Medicamentos
-
----
-
-## Índice Mental
-
-Baseado em:
-
-Horas de estudo
-
-Tempo de foco
-
-Estresse
-
-Descanso
-
-Trabalho Cognitivo
-
----
-
-## Índice Emocional
-
-Baseado em:
-
-Humor
-
-Relacionamentos
-
-Conflitos
-
-Ansiedade
-
-Eventos positivos
-
----
-
-## Índice Financeiro
-
-Baseado em:
-
-Receitas
-
-Despesas
-
-Patrimônio
-
-Investimentos
-
-Dívidas
-
-Metas
-
----
-
-## Índice Social
-
-Baseado em:
-
-Família
-
-Parceiro(a)
-
-Amigos
-
-Tempo de qualidade
-
----
-
-## Índice Espiritual
-
-Opcional.
-
-Baseado em:
-
-Reflexão
-
-Meditação
-
-Gratidão
-
-Oração
-
----
-
-Todos estes índices geram:
+Índice de Consistência
 
 Life Score
 
+Todos os cálculos devem ser reproduzíveis.
+
 ---
 
-# 6. FranciOS Brain
+# 7. Memory Engine
 
-A IA nunca toma decisões.
+Responsável pela memória do usuário.
 
-Ela faz recomendações.
+Registra:
 
-Ela interpreta os dados do Life Engine.
+Histórico
+
+Hábitos
+
+Mudanças
+
+Aprendizados
+
+Conquistas
+
+Fracassos
+
+Objetivo.
+
+Identificar padrões.
 
 Exemplo.
 
-Entrada:
-
-Energia Física
-
-48
-
-Energia Mental
-
-82
-
-Energia Emocional
-
-71
-
-A IA responde.
-
-"Hoje seu corpo está exigindo recuperação.
-Evite atividades físicas intensas.
-Priorize tarefas intelectuais."
+"O usuário produz mais entre 8h e 11h."
 
 ---
 
-# 7. Fluxo do Sistema
+# 8. Conselho de Especialistas
 
-Usuário
+O FranciOS utiliza arquitetura Multiagente.
 
-↓
+Especialistas disponíveis.
 
-Cadastro
+Health Specialist
 
-↓
+Nutrition Specialist
 
-Registros Diários
+Financial Specialist
 
-↓
+Relationship Specialist
 
-Firebase
+Work Specialist
 
-↓
+Learning Specialist
+
+Productivity Specialist
+
+Habit Specialist
+
+Emotional Specialist
+
+Philosophy Specialist
+
+Todos trabalham simultaneamente.
+
+---
+
+# 9. Prediction Engine
+
+Responsável por prever tendências.
+
+Exemplos.
+
+Burnout
+
+Sedentarismo
+
+Problemas financeiros
+
+Quebra de hábitos
+
+Baixa produtividade
+
+Isolamento
+
+As previsões utilizam:
 
 Life Engine
 
-↓
+Memory Engine
 
-FranciOS Brain
+Histórico
 
-↓
+Contexto
 
-Dashboard
-
-↓
-
-Planejamento
-
-↓
-
-Notificações
-
-↓
-
-Aprendizado Contínuo
+Nunca são determinísticas.
 
 ---
 
-# 8. Arquitetura Física
+# 10. Life Mentor
 
-Aplicativo
+É o único agente que conversa com o usuário.
 
-Flutter
+Responsabilidades.
 
-↓
+Explicar
+
+Planejar
+
+Organizar
+
+Priorizar
+
+Motivar
+
+Responder perguntas
+
+Resolver conflitos entre especialistas
+
+---
+
+# 11. Estrutura do Projeto
+
+```
+FranciOS
+
+docs/
+
+app/
+
+backend/
+
+firebase/
+
+assets/
+
+prompts/
+
+scripts/
+
+README.md
+
+LICENSE
+
+.gitignore
+```
+
+---
+
+# 12. Arquitetura Flutter
+
+```
+lib/
+
+core/
+
+shared/
+
+features/
+
+services/
+
+repositories/
+
+models/
+
+providers/
+
+widgets/
+
+screens/
+
+theme/
+
+utils/
+
+main.dart
+```
+
+Cada módulo possui sua própria estrutura.
+
+---
+
+# 13. Arquitetura Firebase
 
 Firebase Authentication
 
@@ -403,155 +455,34 @@ Cloud Functions
 
 ↓
 
-Gemini API
-
----
-
-# 9. Organização do Projeto
-
-app
-
-lib
-
-core
-
-shared
-
-modules
-
-services
-
-widgets
-
-screens
-
-models
-
-repositories
-
-providers
-
-theme
-
-utils
-
----
-
-# 10. Módulos
-
-Perfil
-
-Trabalho
-
-Sono
-
-Alimentação
-
-Saúde
-
-Exercícios
-
-Finanças
-
-Estudos
-
-Relacionamentos
-
-Espiritualidade
-
-Objetivos
-
-Hábitos
-
-Humor
-
-Estresse
-
-Aprendizado
-
-IA
-
-Dashboard
-
-Configurações
-
----
-
-# 11. Eventos
-
-Tudo gera eventos.
-
-Exemplo.
-
-Dormiu pouco
+Firebase Messaging
 
 ↓
 
-Energia Física reduzida
+Analytics
 
 ↓
 
-IA gera alerta
+Crashlytics
+
+---
+
+# 14. Fluxo dos Dados
+
+```
+Usuário
 
 ↓
-
-Dashboard muda
-
-↓
-
-Planejamento muda
-
----
-
-# 12. Memória Inteligente
-
-O FranciOS nunca esquece.
-
-Ele cria uma memória temporal.
-
-Exemplo.
-
-Há 6 meses
-
-Dormia 5 horas.
-
-Hoje
-
-Dorme 7 horas.
-
-A IA entende essa evolução.
-
----
-
-# 13. Aprendizado
-
-O sistema aprende continuamente.
-
-Ele identifica padrões como:
-
-• melhor horário para estudar
-
-• melhor horário para dormir
-
-• dias mais produtivos
-
-• alimentos que aumentam energia
-
-• atividades que reduzem estresse
-
-• hábitos que melhoram desempenho
-
----
-
-# 14. Escalabilidade
-
-Todo novo módulo deve obedecer:
 
 Interface
 
 ↓
 
-Regras
+Validação
+
+↓
+
+Business Layer
 
 ↓
 
@@ -559,80 +490,213 @@ Life Engine
 
 ↓
 
-Banco de Dados
+Memory Engine
 
 ↓
+
+Firebase
+
+↓
+
+Especialistas
+
+↓
+
+Prediction Engine
+
+↓
+
+Life Mentor
+
+↓
+
+Resposta
+
+↓
+
+Dashboard
+```
+
+---
+
+# 15. Fluxo da Inteligência
+
+```
+Dados
+
+↓
+
+Normalização
+
+↓
+
+Life Engine
+
+↓
+
+Memory Engine
+
+↓
+
+Especialistas
+
+↓
+
+Prediction Engine
+
+↓
+
+Life Mentor
+
+↓
+
+Usuário
+```
+
+---
+
+# 16. Segurança
+
+Todos os dados pertencem ao usuário.
+
+Princípios.
+
+Autenticação obrigatória.
+
+Criptografia.
+
+Regras do Firestore.
+
+Cloud Functions.
+
+Chaves protegidas.
+
+Logs.
+
+Backup.
+
+Controle por UID.
+
+---
+
+# 17. Escalabilidade
+
+A arquitetura suporta.
+
+Milhões de usuários.
+
+Novos módulos.
+
+Novas IA.
+
+Novos dispositivos.
+
+Novos sensores.
+
+Integração com wearables.
+
+Open Finance.
+
+Google Fit.
+
+Apple Health.
+
+Samsung Health.
+
+---
+
+# 18. Offline First
+
+O FranciOS deve continuar funcionando mesmo sem internet.
+
+Estratégia.
+
+Cache local.
+
+Fila de sincronização.
+
+Conflitos resolvidos automaticamente.
+
+Sincronização transparente.
+
+---
+
+# 19. Roadmap Arquitetural
+
+## Arquitetura 0.1
+
+Cadastro
+
+Dashboard
+
+Firebase
 
 IA
 
-Nunca diretamente.
-
 ---
 
-# 15. Segurança
-
-Todos os usuários possuem:
-
-UID único
-
-Banco isolado
-
-Criptografia
-
-Backup
-
-Sincronização
-
-Controle de acesso
-
----
-
-# 16. Roadmap Arquitetural
-
-Versão 0.1
-
-Sistema básico
-
-↓
-
-Versão 0.5
+## Arquitetura 0.5
 
 Life Engine
 
-↓
+Memory Engine
 
-Versão 1.0
+Planejamento
 
-FranciOS Brain
+Relatórios
 
-↓
+---
 
-Versão 2.0
+## Arquitetura 1.0
 
-Predição Inteligente
+Conselho de Especialistas
 
-↓
+Prediction Engine
 
-Versão 3.0
+Dashboard Inteligente
+
+---
+
+## Arquitetura 2.0
+
+Smartwatch
+
+Google Fit
+
+Apple Health
+
+Open Finance
+
+Wearables
+
+IoT
+
+---
+
+## Arquitetura 3.0
 
 Agentes Autônomos
 
-↓
-
-Versão 4.0
-
 Gêmeo Digital
 
----
+Planejamento Preditivo
 
-# 17. Princípio Máximo
-
-O FranciOS nunca tentará controlar a vida do usuário.
-
-Seu objetivo é oferecer contexto, previsões e recomendações para que a decisão final permaneça sempre com a pessoa.
+Aprendizado Adaptativo
 
 ---
 
-Documento Oficial da Arquitetura do FranciOS
+# Princípio Supremo
+
+A arquitetura do FranciOS existe para permitir que qualquer funcionalidade futura seja adicionada sem comprometer estabilidade, desempenho, segurança ou experiência do usuário.
+
+Toda decisão técnica deve respeitar este princípio.
+
+---
+
+Documento Oficial de Arquitetura
+
+Projeto FranciOS
 
 Versão 1.0
+
+Todos os direitos reservados.
