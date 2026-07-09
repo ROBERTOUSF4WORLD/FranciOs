@@ -88,6 +88,36 @@ describe("calcularIndices", () => {
     expect(indices.evolucao).toBeGreaterThan(50);
   });
 
+  it("reduz a evolucao quando o Life Score piora entre os dois ultimos pontos", () => {
+    const energiasPiores: EnergyBreakdown = { ...ENERGIAS_BASE, fisica: 20 };
+    const indices = calcularIndices([ENERGIAS_BASE, energiasPiores], 5);
+
+    expect(indices.evolucao).toBeLessThan(50);
+  });
+
+  it("aumenta a recuperacao quando o score sobe apos uma queda", () => {
+    // Historico: base (50) -> queda (menor) -> recuperacao acima da queda.
+    const queda: EnergyBreakdown = { ...ENERGIAS_BASE, fisica: 20, mental: 20 };
+    const recuperado: EnergyBreakdown = { ...ENERGIAS_BASE, fisica: 70 };
+    const indices = calcularIndices([ENERGIAS_BASE, queda, recuperado], 5);
+
+    expect(indices.recuperacao).toBeGreaterThan(50);
+  });
+
+  it("mantem a recuperacao neutra (50) quando o score atual e o menor do historico", () => {
+    // O ponto atual e o mais baixo -> nao houve recuperacao.
+    const queda: EnergyBreakdown = { ...ENERGIAS_BASE, fisica: 20, mental: 20 };
+    const indices = calcularIndices([ENERGIAS_BASE, queda], 5);
+
+    expect(indices.recuperacao).toBe(50);
+  });
+
+  it("calcula a consistencia proporcional quando ha poucos eventos recentes", () => {
+    // 3 eventos * 10 = 30 (abaixo do teto de 100).
+    const indices = calcularIndices([ENERGIAS_BASE, ENERGIAS_BASE], 3);
+    expect(indices.consistencia).toBe(30);
+  });
+
   it("aumenta a consistencia com mais eventos recentes, ate o teto de 100", () => {
     const indices = calcularIndices([ENERGIAS_BASE, ENERGIAS_BASE], 20);
     expect(indices.consistencia).toBe(100);
