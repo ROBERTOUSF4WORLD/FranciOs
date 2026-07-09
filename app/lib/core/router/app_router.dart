@@ -10,6 +10,7 @@ import '../../presentation/screens/dashboard/dashboard_screen.dart';
 import '../../presentation/screens/events/event_form_screen.dart';
 import '../../presentation/screens/events/event_history_screen.dart';
 import '../../presentation/screens/modules/saude_screen.dart';
+import '../../presentation/screens/modules/sono_screen.dart';
 import '../../presentation/screens/profile/profile_screen.dart';
 
 /// Configuracao central de rotas do FranciOS (go_router).
@@ -54,6 +55,10 @@ GoRouter buildAppRouter(AuthService authService) {
       GoRoute(
         path: '/modules/saude',
         builder: (context, state) => const SaudeScreen(),
+      ),
+      GoRoute(
+        path: '/modules/sono',
+        builder: (context, state) => const SonoScreen(),
       ),
       GoRoute(
         path: '/profile',
