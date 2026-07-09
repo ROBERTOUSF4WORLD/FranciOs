@@ -44,6 +44,45 @@ As mudanças são organizadas nas seguintes categorias.
 
 ---
 
+# [1.1.0] - Em Desenvolvimento
+
+## Added
+
+### Aplicativo Flutter
+
+- Fluxo de autenticacao: telas de Login e Cadastro (Firebase Auth).
+- Dashboard inicial com Life Score e energias lidos em tempo real do Firestore.
+- Tela de Perfil com edicao do nome de exibicao.
+- Tela de registro de evento de vida (Event Engine UI).
+- Tela de historico de eventos.
+- Grafico de evolucao do Life Score no Dashboard (fl_chart).
+
+### Backend (Cloud Functions)
+
+- Trigger onUserCreated: cria o documento inicial do usuario.
+- Funcao registerLifeEvent: registra eventos e aciona o Life Engine.
+- Life Engine deterministico: calcula Life Score, seis energias e tres indices.
+- Snapshot da serie historica em users/{uid}/lifeScoreHistory a cada recalculo.
+
+### Testes
+
+- Testes unitarios do Life Engine (Jest).
+- Teste unitario do contrato de tipos de evento (Flutter).
+
+### Documentacao
+
+- Anexo tecnico em BancoDeDados.md com o esquema real do Firestore.
+
+## Changed
+
+- firebase/firestore.rules: subcolecoes do usuario passam a ser listadas
+  explicitamente (events, modules, lifeScoreHistory) em vez de um wildcard.
+
+## Security
+
+- users/{uid}/lifeScoreHistory: escrita restrita ao backend (Admin SDK),
+  impedindo que o cliente falsifique a evolucao do proprio Life Score.
+
 # [1.0.0] - Em Desenvolvimento
 
 ## Added
