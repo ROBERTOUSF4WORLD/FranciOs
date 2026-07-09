@@ -24,6 +24,11 @@ class DashboardScreen extends StatelessWidget {
         title: const Text('Dashboard'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.history),
+            tooltip: 'Historico de eventos',
+            onPressed: () => context.push('/events'),
+          ),
+          IconButton(
             icon: const Icon(Icons.person_outline),
             tooltip: 'Perfil',
             onPressed: () => context.push('/profile'),
