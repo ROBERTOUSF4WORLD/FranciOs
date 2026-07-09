@@ -1,0 +1,26 @@
+rules_version = '2';
+
+// ============================================================
+// FranciOS - Firebase Storage Security Rules
+// Cada usuario so pode ler/escrever arquivos dentro da propria
+// pasta (fotos de perfil, anexos, exportacoes de dados etc.).
+// ============================================================
+
+service firebase.storage {
+  match /b/{bucket}/o {
+
+    function isOwner(userId) {
+      return request.auth != null && request.auth.uid == userId;
+    }
+
+    match /users/{userId}/{allPaths=**} {
+      allow read, write: if isOwner(userId)
+        && request.resource.size < 20 * 1024 * 1024; // limite de 20MB por arquivo
+    }
+
+    // Nega qualquer outro caminho por padrao.
+    match /{allPaths=**} {
+      allow read, write: if false;
+    }
+  }
+}
