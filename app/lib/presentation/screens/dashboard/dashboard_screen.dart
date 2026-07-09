@@ -7,11 +7,11 @@ import 'widgets/life_chart_widget.dart';
 
 /// Dashboard Inteligente.
 ///
-/// Exibe o Life Score e as energias calculadas pelo Life Engine
-/// (backend/functions/src/engines/lifeEngine.ts), lidos em tempo
-/// real do documento users/{uid} no Firestore. A integracao com o
-/// Memory Engine e o Prediction Engine sera adicionada conforme o
-/// backend evoluir (ver docs/Arquitetura.md).
+/// Exibe o Life Score, as energias e os tres indices calculados pelo
+/// Life Engine (backend/functions/src/engines/lifeEngine.ts), lidos
+/// em tempo real do documento users/{uid} no Firestore. A integracao
+/// com o Memory Engine e o Prediction Engine sera adicionada conforme
+/// o backend evoluir (ver docs/Arquitetura.md).
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
 
@@ -58,6 +58,8 @@ class DashboardScreen extends StatelessWidget {
                 final lifeScore = (dados?['lifeScore'] as num?)?.toInt() ?? 0;
                 final energias =
                     (dados?['energias'] as Map<String, dynamic>?) ?? const {};
+                final indices =
+                    (dados?['indices'] as Map<String, dynamic>?) ?? const {};
 
                 return ListView(
                   padding: const EdgeInsets.all(16),
@@ -88,6 +90,38 @@ class DashboardScreen extends StatelessWidget {
                     const SizedBox(height: 16),
                     LifeChartWidget(uid: usuario.uid),
                     const SizedBox(height: 16),
+                    if (indices.isNotEmpty) ...[
+                      Card(
+                        child: Padding(
+                          padding: const EdgeInsets.all(16),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              const Text(
+                                'Indices',
+                                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18),
+                              ),
+                              const SizedBox(height: 12),
+                              _IndiceBar(
+                                rotulo: 'Evolucao',
+                                valor: (indices['evolucao'] as num?)?.toInt() ?? 0,
+                              ),
+                              const SizedBox(height: 12),
+                              _IndiceBar(
+                                rotulo: 'Recuperacao',
+                                valor: (indices['recuperacao'] as num?)?.toInt() ?? 0,
+                              ),
+                              const SizedBox(height: 12),
+                              _IndiceBar(
+                                rotulo: 'Consistencia',
+                                valor: (indices['consistencia'] as num?)?.toInt() ?? 0,
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 16),
+                    ],
                     if (energias.isNotEmpty) ...[
                       const Text('Energias', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
                       const SizedBox(height: 8),
@@ -129,6 +163,39 @@ class DashboardScreen extends StatelessWidget {
   String _capitalizar(String texto) {
     if (texto.isEmpty) return texto;
     return texto[0].toUpperCase() + texto.substring(1);
+  }
+}
+
+/// Exibe um indice do Life Engine (0-100) como um rotulo, o valor
+/// numerico e uma barra de progresso proporcional.
+class _IndiceBar extends StatelessWidget {
+  const _IndiceBar({required this.rotulo, required this.valor});
+
+  final String rotulo;
+  final int valor;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Text(rotulo),
+            Text('$valor'),
+          ],
+        ),
+        const SizedBox(height: 4),
+        ClipRRect(
+          borderRadius: BorderRadius.circular(4),
+          child: LinearProgressIndicator(
+            value: (valor.clamp(0, 100)) / 100,
+            minHeight: 8,
+          ),
+        ),
+      ],
+    );
   }
 }
 
