@@ -146,7 +146,7 @@ class DashboardScreen extends StatelessWidget {
                       runSpacing: 12,
                       children: const [
                         _ModuloChip(label: 'Saude', rota: '/modules/saude'),
-                        _ModuloChip(label: 'Sono'),
+                        _ModuloChip(label: 'Sono', rota: '/modules/sono'),
                         _ModuloChip(label: 'Financas'),
                         _ModuloChip(label: 'Estudos'),
                         _ModuloChip(label: 'Habitos'),
