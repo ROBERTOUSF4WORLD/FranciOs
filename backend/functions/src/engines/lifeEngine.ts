@@ -32,7 +32,7 @@ const IMPACTO_POR_TIPO: Record<string, Partial<EnergyBreakdown>> = {
   espiritualidade: { espiritual: 1 },
 };
 
-const ENERGIAS_BASE: EnergyBreakdown = {
+export const ENERGIAS_BASE: EnergyBreakdown = {
   fisica: 50,
   mental: 50,
   emocional: 50,
@@ -41,7 +41,8 @@ const ENERGIAS_BASE: EnergyBreakdown = {
   espiritual: 50,
 };
 
-function clamp(valor: number, min = 0, max = 100): number {
+/** Mantem um valor dentro de um intervalo (0-100 por padrao). */
+export function clamp(valor: number, min = 0, max = 100): number {
   return Math.min(max, Math.max(min, valor));
 }
 
@@ -49,8 +50,11 @@ function clamp(valor: number, min = 0, max = 100): number {
  * Aplica o impacto de um unico evento sobre as energias atuais.
  * O parametro 'valor' do evento (ex: horas de sono, intensidade do
  * treino) atua como multiplicador do impacto padrao do tipo.
+ *
+ * Exportada para permitir testes unitarios diretos (ver
+ * lifeEngine.test.ts), sem depender do Firestore.
  */
-function aplicarEvento(energias: EnergyBreakdown, evento: LifeEvent): EnergyBreakdown {
+export function aplicarEvento(energias: EnergyBreakdown, evento: LifeEvent): EnergyBreakdown {
   const impacto = IMPACTO_POR_TIPO[evento.tipo] ?? {};
   const intensidade = clamp(evento.valor ?? 1, 0, 5); // 0..5, padrao 1
   const atualizado = { ...energias };
@@ -63,13 +67,15 @@ function aplicarEvento(energias: EnergyBreakdown, evento: LifeEvent): EnergyBrea
   return atualizado;
 }
 
-function calcularLifeScore(energias: EnergyBreakdown): number {
+/** Calcula o Life Score (media das seis energias, arredondada). */
+export function calcularLifeScore(energias: EnergyBreakdown): number {
   const valores = Object.values(energias);
   const media = valores.reduce((soma, v) => soma + v, 0) / valores.length;
   return Math.round(media);
 }
 
-function calcularIndices(
+/** Calcula os tres indices (evolucao, recuperacao, consistencia). */
+export function calcularIndices(
   historico: EnergyBreakdown[],
   eventosRecentes: number,
 ): LifeIndices {
@@ -97,7 +103,7 @@ function calcularIndices(
 
 /**
  * Recalcula o Life Score completo de um usuario a partir do
- * historico de eventos armazenado em users/{uid}/events.
+ * historico de eventos armazenados em users/{uid}/events.
  */
 export async function recalcularLifeScore(
   db: FirebaseFirestore.Firestore,
