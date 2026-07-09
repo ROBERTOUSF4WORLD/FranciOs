@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../../data/services/auth_service.dart';
+import 'widgets/life_chart_widget.dart';
 
 /// Dashboard Inteligente.
 ///
@@ -84,6 +85,8 @@ class DashboardScreen extends StatelessWidget {
                         ),
                       ),
                     ),
+                    const SizedBox(height: 16),
+                    LifeChartWidget(uid: usuario.uid),
                     const SizedBox(height: 16),
                     if (energias.isNotEmpty) ...[
                       const Text('Energias', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18)),
