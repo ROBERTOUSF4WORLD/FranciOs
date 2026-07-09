@@ -1,6 +1,7 @@
 import * as admin from "firebase-admin";
 import { auth } from "firebase-functions/v1";
 import { onCall, HttpsError } from "firebase-functions/v2/https";
+import { recalcularLifeScore } from "./engines/lifeEngine";
 
 admin.initializeApp();
 const db = admin.firestore();
@@ -24,7 +25,7 @@ export const onUserCreated = auth.user().onCreate(async (user) => {
     email: user.email ?? null,
     nome: user.displayName ?? null,
     criadoEm: admin.firestore.FieldValue.serverTimestamp(),
-    lifeScore: 0,
+    lifeScore: 50,
     nivel: "Explorador",
     franciPoints: 0,
   };
@@ -33,9 +34,9 @@ export const onUserCreated = auth.user().onCreate(async (user) => {
 });
 
 // ------------------------------------------------------------------
-// 2. Event Engine (versao inicial): registra um evento de vida
-//    enviado pelo app (ex: dormiu, treinou, estudou) e atualiza
-//    métricas basicas do Life Engine.
+// 2. Event Engine + Life Engine: registra um evento de vida enviado
+//    pelo app (ex: dormiu, treinou, estudou) e aciona o Life Engine
+//    para recalcular o Life Score, as energias e os indices.
 // ------------------------------------------------------------------
 export const registerLifeEvent = onCall(async (request) => {
   if (!request.auth) {
@@ -66,8 +67,15 @@ export const registerLifeEvent = onCall(async (request) => {
     criadoEm: admin.firestore.FieldValue.serverTimestamp(),
   });
 
-  // TODO: acionar o Life Engine para recalcular Life Score,
-  // Energia Fisica/Mental/Emocional etc. com base no novo evento.
+  // Aciona o Life Engine para recalcular Life Score, energias e
+  // indices com base no historico atualizado de eventos.
+  const lifeScoreResult = await recalcularLifeScore(db, uid);
 
-  return { success: true, eventId: eventRef.id };
+  return {
+    success: true,
+    eventId: eventRef.id,
+    lifeScore: lifeScoreResult.lifeScore,
+    energias: lifeScoreResult.energias,
+    indices: lifeScoreResult.indices,
+  };
 });
