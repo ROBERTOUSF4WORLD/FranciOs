@@ -146,5 +146,18 @@ export async function recalcularLifeScore(
     { merge: true },
   );
 
+  // Registra um snapshot na serie historica users/{uid}/lifeScoreHistory
+  // para permitir a visualizacao da evolucao do Life Score ao longo do
+  // tempo (grafico no Dashboard). Cada evento gera um novo ponto.
+  await db
+    .collection("users")
+    .doc(uid)
+    .collection("lifeScoreHistory")
+    .add({
+      lifeScore: resultado.lifeScore,
+      energias: resultado.energias,
+      criadoEm: admin.firestore.FieldValue.serverTimestamp(),
+    });
+
   return resultado;
 }
