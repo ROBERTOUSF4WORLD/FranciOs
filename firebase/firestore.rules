@@ -18,12 +18,37 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == userId;
     }
 
-    // Perfil do usuario e todos os submodulos da vida
-    // (saude, sono, financas, habitos, estudos, humor, etc.)
+    // Perfil do usuario e submodulos da vida
+    // (saude, sono, financas, habitos, estudos, humor, etc.).
     match /users/{userId} {
       allow read, write: if isOwner(userId);
 
-      match /{subcollection}/{docId} {
+      // Serie historica do Life Score, gerada pelo Life Engine
+      // (backend/functions/src/engines/lifeEngine.ts). E um registro
+      // derivado/auditavel: o dono pode ler, mas apenas o backend
+      // (Cloud Functions via Admin SDK) pode escrever, para impedir
+      // que o cliente falsifique a evolucao do proprio Life Score.
+      //
+      // IMPORTANTE: como esta subcolecao NAO pode ser gravavel pelo
+      // cliente, nao usamos um wildcard {subcollection} generico (que
+      // concederia escrita a qualquer subcolecao, inclusive esta).
+      // Cada subcolecao e listada explicitamente abaixo.
+      match /lifeScoreHistory/{entryId} {
+        allow read: if isOwner(userId);
+        allow write: if false; // apenas Cloud Functions (Admin SDK)
+      }
+
+      // Eventos de vida registrados pelo Event Engine. O cliente
+      // cria/le os proprios eventos; o recalculo do Life Score e
+      // feito pelo backend a partir deles.
+      match /events/{eventId} {
+        allow read, write: if isOwner(userId);
+      }
+
+      // Demais submodulos da vida sob controle total do dono
+      // (saude, sono, financas, habitos, estudos, humor, etc.),
+      // exceto colecoes derivadas listadas explicitamente acima.
+      match /modules/{moduleId} {
         allow read, write: if isOwner(userId);
       }
     }
