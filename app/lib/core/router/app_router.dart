@@ -9,6 +9,7 @@ import '../../presentation/screens/auth/cadastro_screen.dart';
 import '../../presentation/screens/dashboard/dashboard_screen.dart';
 import '../../presentation/screens/events/event_form_screen.dart';
 import '../../presentation/screens/events/event_history_screen.dart';
+import '../../presentation/screens/modules/saude_screen.dart';
 import '../../presentation/screens/profile/profile_screen.dart';
 
 /// Configuracao central de rotas do FranciOS (go_router).
@@ -51,27 +52,13 @@ GoRouter buildAppRouter(AuthService authService) {
         builder: (context, state) => const EventHistoryScreen(),
       ),
       GoRoute(
+        path: '/modules/saude',
+        builder: (context, state) => const SaudeScreen(),
+      ),
+      GoRoute(
         path: '/profile',
         builder: (context, state) => const ProfileScreen(),
       ),
     ],
   );
-}
-
-/// Adapta uma Stream para o ChangeNotifier exigido pelo
-/// 'refreshListenable' do go_router, permitindo que o router
-/// reaja automaticamente a mudancas no estado de autenticacao.
-class GoRouterRefreshStream extends ChangeNotifier {
-  GoRouterRefreshStream(Stream<dynamic> stream) {
-    notifyListeners();
-    _subscription = stream.asBroadcastStream().listen((_) => notifyListeners());
-  }
-
-  late final StreamSubscription<dynamic> _subscription;
-
-  @override
-  void dispose() {
-    _subscription.cancel();
-    super.dispose();
-  }
 }
