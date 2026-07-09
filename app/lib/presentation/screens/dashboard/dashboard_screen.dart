@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 import '../../../data/services/auth_service.dart';
 
@@ -28,6 +29,11 @@ class DashboardScreen extends StatelessWidget {
             onPressed: () => authService.logout(),
           ),
         ],
+      ),
+      floatingActionButton: FloatingActionButton.extended(
+        onPressed: () => context.push('/events/new'),
+        icon: const Icon(Icons.add),
+        label: const Text('Registrar evento'),
       ),
       body: usuario == null
           ? const Center(child: Text('Usuario nao autenticado.'))
