@@ -8,6 +8,7 @@ import '../../presentation/screens/auth/login_screen.dart';
 import '../../presentation/screens/auth/cadastro_screen.dart';
 import '../../presentation/screens/dashboard/dashboard_screen.dart';
 import '../../presentation/screens/events/event_form_screen.dart';
+import '../../presentation/screens/profile/profile_screen.dart';
 
 /// Configuracao central de rotas do FranciOS (go_router).
 ///
@@ -43,6 +44,10 @@ GoRouter buildAppRouter(AuthService authService) {
       GoRoute(
         path: '/events/new',
         builder: (context, state) => const EventFormScreen(),
+      ),
+      GoRoute(
+        path: '/profile',
+        builder: (context, state) => const ProfileScreen(),
       ),
     ],
   );
