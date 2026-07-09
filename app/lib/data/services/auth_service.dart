@@ -50,6 +50,14 @@ class AuthService {
     return _firebaseAuth.sendPasswordResetEmail(email: email.trim());
   }
 
+  /// Atualiza o nome de exibicao do usuario autenticado (tela de
+  /// Perfil). O chamador e responsavel por sincronizar o campo
+  /// 'nome' no documento users/{uid} do Firestore, se necessario.
+  Future<void> atualizarNome(String nome) async {
+    await _firebaseAuth.currentUser?.updateDisplayName(nome.trim());
+    await _firebaseAuth.currentUser?.reload();
+  }
+
   /// Traduz os codigos de erro do FirebaseAuth para mensagens
   /// legiveis em portugues.
   String traduzirErro(Object error) {
