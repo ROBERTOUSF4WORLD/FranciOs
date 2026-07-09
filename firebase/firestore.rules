@@ -1,0 +1,57 @@
+rules_version = '2';
+
+// ============================================================
+// FranciOS - Firestore Security Rules
+// Principio: Privacy First. Cada usuario so acessa os proprios
+// dados. Nenhum documento e legivel/gravavel por outro usuario
+// ou por clientes nao autenticados.
+// ============================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    // Perfil do usuario e todos os submodulos da vida
+    // (saude, sono, financas, habitos, estudos, humor, etc.)
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+
+      match /{subcollection}/{docId} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // Memoria/contexto gerado pelo Memory Engine - somente o
+    // backend (Cloud Functions, via Admin SDK) deve escrever aqui.
+    match /memory/{userId}/{document=**} {
+      allow read: if isOwner(userId);
+      allow write: if false; // apenas Cloud Functions (Admin SDK)
+    }
+
+    // Previsoes geradas pelo Prediction Engine - somente leitura
+    // pelo dono; escrita restrita ao backend.
+    match /predictions/{userId}/{document=**} {
+      allow read: if isOwner(userId);
+      allow write: if false;
+    }
+
+    // Ranking global opcional - leitura publica de dados ja
+    // anonimizados/agregados, sem nenhuma informacao privada.
+    match /rankingGlobal/{entryId} {
+      allow read: if isSignedIn();
+      allow write: if false; // apenas Cloud Functions
+    }
+
+    // Bloqueio padrao: qualquer caminho nao listado acima e negado.
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
