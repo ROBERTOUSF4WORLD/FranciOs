@@ -145,7 +145,7 @@ class DashboardScreen extends StatelessWidget {
                       spacing: 12,
                       runSpacing: 12,
                       children: const [
-                        _ModuloChip(label: 'Saude'),
+                        _ModuloChip(label: 'Saude', rota: '/modules/saude'),
                         _ModuloChip(label: 'Sono'),
                         _ModuloChip(label: 'Financas'),
                         _ModuloChip(label: 'Estudos'),
@@ -199,13 +199,24 @@ class _IndiceBar extends StatelessWidget {
   }
 }
 
+/// Chip de um modulo do FranciOS. Quando [rota] e informada, o chip
+/// se torna clicavel e navega para a tela do modulo correspondente
+/// (via go_router). Modulos ainda sem tela dedicada ficam sem rota.
 class _ModuloChip extends StatelessWidget {
-  const _ModuloChip({required this.label});
+  const _ModuloChip({required this.label, this.rota});
 
   final String label;
+  final String? rota;
 
   @override
   Widget build(BuildContext context) {
-    return Chip(label: Text(label));
+    final chip = Chip(label: Text(label));
+    if (rota == null) return chip;
+
+    return InkWell(
+      borderRadius: BorderRadius.circular(8),
+      onTap: () => context.push(rota!),
+      child: chip,
+    );
   }
 }
