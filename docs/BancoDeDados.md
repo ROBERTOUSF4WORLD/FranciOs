@@ -569,3 +569,81 @@ Documento Oficial
 Banco de Dados do FranciOS
 
 Versão 1.0
+
+
+---
+
+# Anexo Tecnico: Implementacao Atual (MVP)
+
+Versao: 1.0
+
+Este anexo documenta o mapeamento entre o modelo conceitual descrito
+acima e o esquema real ja implementado no Firestore (ver
+backend/functions/src/ e firebase/firestore.rules). A medida que os
+motores evoluirem, novas colecoes serao promovidas do modelo
+conceitual para este anexo.
+
+## Documento: users/{uid}
+
+Criado automaticamente pelo trigger onUserCreated
+(backend/functions/src/index.ts) quando uma nova conta e criada.
+
+Campos:
+
+- uid: identificador do usuario (string)
+- email: e-mail da conta (string | null)
+- nome: nome de exibicao (string | null)
+- criadoEm: timestamp do cadastro
+- lifeScore: Life Score atual, 0 a 100 (number)
+- energias: mapa com as seis energias (fisica, mental, emocional,
+  financeira, social, espiritual)
+- indices: mapa com evolucao, recuperacao e consistencia
+- lifeScoreAtualizadoEm: timestamp do ultimo recalculo
+- nivel: nivel do usuario (string, ex: "Explorador")
+- franciPoints: pontos de gamificacao (number)
+
+## Subcolecao: users/{uid}/events
+
+Alimentada pelo Event Engine (Cloud Function registerLifeEvent).
+Cada documento representa um evento de vida registrado pelo usuario.
+
+Campos:
+
+- tipo: categoria do evento (ex: sono, exercicio, alimentacao,
+  trabalho, estudo, financas, humor, estresse, relacionamento,
+  habito, espiritualidade)
+- valor: intensidade/quantidade opcional (number | null)
+- observacao: nota livre opcional (string | null)
+- criadoEm: timestamp do registro
+
+Permissoes: leitura e escrita apenas pelo dono (isOwner).
+
+## Subcolecao: users/{uid}/lifeScoreHistory
+
+Serie historica derivada, gravada pelo Life Engine
+(backend/functions/src/engines/lifeEngine.ts) a cada recalculo do
+Life Score. Alimenta o grafico de evolucao no Dashboard.
+
+Campos:
+
+- lifeScore: Life Score calculado naquele instante (number)
+- energias: mapa das seis energias no instante do calculo
+- criadoEm: timestamp do snapshot
+
+Permissoes: leitura apenas pelo dono; escrita restrita ao backend
+(Cloud Functions via Admin SDK). O cliente NAO pode gravar nesta
+subcolecao, para impedir a falsificacao da evolucao do proprio
+Life Score. Por isso as regras nao usam um wildcard generico de
+subcolecao (ver firebase/firestore.rules).
+
+## Modelo de permissoes (firebase/firestore.rules)
+
+- users/{uid}: leitura e escrita pelo dono.
+- users/{uid}/lifeScoreHistory/{id}: leitura pelo dono; escrita
+  somente pelo backend.
+- users/{uid}/events/{id}: leitura e escrita pelo dono.
+- users/{uid}/modules/{id}: leitura e escrita pelo dono.
+- memory, predictions: leitura pelo dono; escrita somente pelo backend.
+- rankingGlobal: leitura por usuarios autenticados; escrita somente
+  pelo backend.
+- Qualquer caminho nao listado e negado por padrao.
